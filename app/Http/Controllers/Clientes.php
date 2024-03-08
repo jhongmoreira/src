@@ -30,6 +30,8 @@ class Clientes extends Controller
 
         $cliente->save();
 
+        toastr()->success('Data has been saved successfully!');
+
         return redirect('/')->with('msg','Cliente cadastrado com sucesso.');
     }
 
