@@ -352,9 +352,9 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                <!-- @if(session('msg'))
+                @if(session('msg'))
                     <p class="msg alert alert-info">{{session('msg')}}</p>
-                @endif -->
+                @endif
                     @yield('content')
                 </div>
                 <!-- /.container-fluid -->

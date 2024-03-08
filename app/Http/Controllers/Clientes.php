@@ -30,8 +30,7 @@ class Clientes extends Controller
 
         $cliente->save();
 
-        // return redirect('/')->with('msg','Cliente cadastrado com sucesso.');
-        return back()->with('msg','Cliente cadastrado com sucesso.');
+        return redirect('/')->with('msg','Cliente cadastrado com sucesso.');
     }
 
     public function show($id){
