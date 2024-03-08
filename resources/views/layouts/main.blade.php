@@ -20,7 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/> -->
 
 </head>
 
@@ -428,13 +428,13 @@
     <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
 
     <!-- Toast JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 
     @if (Session::has('msg'))
         <script>
             toastr.success("{{ Session::get('msg') }}");
         </script>
-    @endif
+    @endif -->
 
 
 </body>
