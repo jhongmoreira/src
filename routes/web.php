@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Clientes;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Dashboard::class, 'index'])->name('home');
+Route::get('/cadastrar/clientes', [Clientes::class, 'index'])->name('cadastrar-cliente');
+
