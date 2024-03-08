@@ -16,5 +16,7 @@ use App\Http\Controllers\Clientes;
 */
 
 Route::get('/', [Dashboard::class, 'index'])->name('home');
-Route::get('/cadastrar/clientes', [Clientes::class, 'index'])->name('cadastrar-cliente');
+Route::get('/cadastrar/clientes', [Clientes::class, 'create'])->name('cadastrar-cliente');
+Route::post('/cliente/salvar', [Clientes::class, 'store'])->name('salvar-cliente');
+Route::get('/clientes', [Clientes::class, 'index'])->name('clientes');
 

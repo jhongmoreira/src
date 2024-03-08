@@ -6,6 +6,9 @@
     <div class="col-md-12"><h3>Novo Cliente</h3></div>
 </div>
 
+<form action="{{ route('salvar-cliente') }}" method="post">
+    @csrf
+
 <div class="row">
 
     <div class="col-md-8">
@@ -53,7 +56,8 @@
 
 <div class="row">
     <div class="col-md-3">
-        <a href="#" class="btn btn-primary form-control">Cadastrar</a>
+        <button class="form-control btn btn-primary" type="submit">Cadastrar</button>
     </div>
 </div>
+</form>
 @endsection
