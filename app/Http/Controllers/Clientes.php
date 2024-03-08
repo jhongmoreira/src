@@ -52,4 +52,14 @@ class Clientes extends Controller
 
         return redirect('/')->with('msg', 'Cliente atualizado com sucesso!');
     }
+
+    public function delete($id){
+        $cliente = Cliente::findOrFail($id);
+        return view('cliente.delete', ['cliente'=>$cliente]);
+    }
+
+    public function destroy($id){
+        $cliente = Cliente::findOrFail($id)->delete();
+        return redirect('/')->with('msg', 'Cliente deletado com sucesso!');
+    }
 }

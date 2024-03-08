@@ -16,9 +16,9 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nome');
             $table->string('cpf')->unique();
-            $table->string('whatsapp');
-            $table->string('email');
-            $table->text('obs');
+            $table->string('whatsapp')->nullable();
+            $table->string('email')->nullable();
+            $table->text('obs')->nullable();
         });
     }
 
