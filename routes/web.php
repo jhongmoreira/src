@@ -19,4 +19,8 @@ Route::get('/', [Dashboard::class, 'index'])->name('home');
 Route::get('/cadastrar/clientes', [Clientes::class, 'create'])->name('cadastrar-cliente');
 Route::post('/cliente/salvar', [Clientes::class, 'store'])->name('salvar-cliente');
 Route::get('/clientes', [Clientes::class, 'index'])->name('clientes');
+Route::get('/cliente/{id}', [Clientes::class, 'show'])->name('cliente');
+Route::get('/editar/cliente/{id}', [Clientes::class, 'edit'])->name('editar-cliente');
+Route::post('/update/cliente/{id}', [Clientes::class, 'update'])->name('update-cliente');
+Route::get('/apagar/cliente/{id}', [Clientes::class, 'edit'])->name('apagar-cliente');
 

@@ -37,9 +37,9 @@
                             <td>{{ $cliente->whatsapp }}</td>
                             <td>{{ $cliente->email }}</td>
                             <td>
-                                <button class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></button>
-                                <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="fa fa-ban"></i></button>
+                                <a href="{{ route('cliente', $cliente->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></a>
+                                <a href="{{ route('editar-cliente', $cliente->id) }}" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                <a href="{{ route('apagar-cliente', $cliente->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i></a>
                             </td>
                         </tr>
                         @endforeach

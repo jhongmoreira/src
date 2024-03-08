@@ -32,4 +32,24 @@ class Clientes extends Controller
 
         return redirect('/')->with('msg','Cliente cadastrado com sucesso.');
     }
+
+    public function show($id){
+        $cliente = Cliente::findOrFail($id);
+
+        return view('cliente.show', ['cliente'=>$cliente]);
+    }
+
+    public function edit($id){
+        $cliente = Cliente::findOrFail($id);
+
+        return view('cliente.edit', ['cliente' => $cliente ]);
+    }
+
+    public function update(Request $request){
+        $data = $request->all();
+        
+        Cliente::findOrFail($request->id)->update($data);
+
+        return redirect('/')->with('msg', 'Cliente atualizado com sucesso!');
+    }
 }
