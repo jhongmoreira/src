@@ -78,14 +78,15 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-file"></i>
-                    <span>Arquivos</span>
+                    <i class="fas fa-fw fa-tools"></i>
+                    <span>Serviços</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Gestão de arquivos</h6>
-                        <a class="collapse-item" href="utilities-border.html">Pasta Interna</a>
+                        <h6 class="collapse-header">Serviços</h6>
+                        <a class="collapse-item" href="{{ route('novo-servico') }}">Novo</a>
+                        <a class="collapse-item" href="{{ route('servicos') }}">Listar</a>
                     </div>
                 </div>
             </li>

@@ -39,6 +39,7 @@
                                 <td>{{ $cliente->email }}</td>
                                 <td>
                                     <a href="{{ route('cliente', $cliente->id) }}" class="btn btn-sm btn-primary mt-1"><i class="fa fa-eye"></i></a>
+                                    <a href="{{ $cliente->pasta }}" target="_blank" class="btn btn-sm btn-secondary mt-1"><i class="fa fa-folder"></i></a>
                                     <a href="{{ route('editar-cliente', $cliente->id) }}" class="btn btn-sm btn-warning mt-1"><i class="fa fa-edit"></i></a>
                                     <a href="{{ route('apagar-cliente', $cliente->id) }}" class="btn btn-sm btn-danger mt-1"><i class="fa fa-ban"></i></a>
                                 </td>
@@ -46,8 +47,9 @@
                             @endforeach
                         </tbody>
                 </table>
-            <div class="table-responsive">
+                </div>
             </div>
+</div>
 
         </div>
     </div>
