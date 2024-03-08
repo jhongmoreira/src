@@ -26,13 +26,17 @@ class Clientes extends Controller
         $cliente->whatsapp = $request->whatsapp;
         $cliente->email = $request->email;
         $cliente->obs = $request->obs;
+        $cliente->pasta = $request->pasta;
 
 
         $cliente->save();
 
-        toastr()->success('Data has been saved successfully!');
+        // return redirect('/')->with('msg','Registro salvo com sucesso.');
 
-        return redirect('/')->with('msg','Cliente cadastrado com sucesso.');
+        //Implmenetação com toastr
+        toastr()->success('Data has been saved successfully!');
+        return back();
+
     }
 
     public function show($id){
@@ -51,8 +55,13 @@ class Clientes extends Controller
         $data = $request->all();
         
         Cliente::findOrFail($request->id)->update($data);
+ 
+        // return redirect('/')->with('msg', 'Cliente atualizado com sucesso!');
 
-        return redirect('/')->with('msg', 'Cliente atualizado com sucesso!');
+        //Implementação com toastr
+        toastr()->success('Registro atualizado!');
+        return back();
+
     }
 
     public function delete($id){
@@ -62,6 +71,12 @@ class Clientes extends Controller
 
     public function destroy($id){
         $cliente = Cliente::findOrFail($id)->delete();
-        return redirect('/')->with('msg', 'Cliente deletado com sucesso!');
+
+        // return redirect('/')->with('msg', 'Cliente deletado com sucesso!');
+
+        //Implementação com toastr
+        toastr()->success('Registro deletado!');
+        return redirect('/clientes');
+        
     }
 }

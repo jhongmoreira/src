@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('whatsapp')->nullable();
             $table->string('email')->nullable();
             $table->text('obs')->nullable();
+            $table->text('pasta')->nullable();
         });
     }
 

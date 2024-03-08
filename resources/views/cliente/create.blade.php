@@ -43,6 +43,13 @@
         </div>
     </div>
 
+    <div class="col-md-4">
+        <div class="form-group">
+          <label for="pasta">Pasta do Drive</label>
+          <input type="url" name="pasta" id="pasta" class="form-control">
+        </div>
+    </div>
+
 </div>   
 
 <div class="row">

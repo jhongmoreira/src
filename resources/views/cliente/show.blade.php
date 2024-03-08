@@ -32,6 +32,14 @@
 
 </div>
 
+<div class="row">
+    <div class="col-md-2">
+        <a href="{{ $cliente->pasta }}" target="_blank" class="btn btn-sm btn-primary" >
+            <i class="fa fa-folder"></i> Abrir Pasta
+        </a>
+    </div>
+</div>
+
 <hr>
 
 <div class="row">

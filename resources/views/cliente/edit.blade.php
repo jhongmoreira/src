@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12"><h3>Editando: {{ $cliente->nome }}</h3></div>
+    <div class="col-md-12"><h3>Editando {{ $cliente->nome }}</h3></div>
 </div>
 
 <form action="{{ route('update-cliente', $cliente->id) }}" method="post">
@@ -40,6 +40,13 @@
         <div class="form-group">
           <label for="email">E-mail</label>
           <input type="email" name="email" id="email" class="form-control" value="{{ $cliente->email }}">
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-group">
+          <label for="pasta">Pasta do Drive</label>
+          <input type="url" name="pasta" id="pasta" class="form-control" value="{{ $cliente->pasta }}">
         </div>
     </div>
 
