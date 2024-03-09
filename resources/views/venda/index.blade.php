@@ -33,13 +33,13 @@
                         <tbody>
                             @foreach($vendas as $venda)
                             <tr>
-                                <td>{{ $venda->cliente }}</td>
+                                <td>{{ $cliente->nome }}</td>
                                 <td>{{ $servico->servico }}</td>
                                 <td>{{ $venda->valor_final }}</td>
                                 <td>{{ $venda->pago }}</td>
                                 <td>
-                                    <a href="{{ route('cliente', $cliente->id) }}" class="btn btn-sm btn-primary mt-1"><i class="fa fa-eye"></i></a>
-                                    <a href="{{ $cliente->pasta }}" target="_blank" class="btn btn-sm btn-secondary mt-1"><i class="fa fa-folder"></i></a>
+                                    <a href="{{ route('cliente', $venda->id) }}" class="btn btn-sm btn-primary mt-1"><i class="fa fa-eye"></i></a>
+                                    <a href="{{  $venda->id }}" target="_blank" class="btn btn-sm btn-secondary mt-1"><i class="fa fa-folder"></i></a>
                                     <a href="{{ route('editar-cliente', $venda->id) }}" class="btn btn-sm btn-warning mt-1"><i class="fa fa-edit"></i></a>
                                     <a href="{{ route('apagar-cliente', $venda->id) }}" class="btn btn-sm btn-danger mt-1"><i class="fa fa-ban"></i></a>
                                 </td>
