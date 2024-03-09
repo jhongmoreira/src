@@ -63,14 +63,14 @@
     <div class="col-md-2">
         <div class="form-group">
           <label for="valor"><b>Valor</b></label>
-          <p>{{ $venda->servico->valor}}</p>
+          <p>{{ 'R$ ' . number_format($venda->servico->valor, 2, ',', '.'); }}</p>
         </div>
     </div>
 
     <div class="col-md-2">
         <div class="form-group">
           <label for="valor"><b>Total c/ Desconto</b></label>
-          <p>{{ $venda->valor_final}}</p>
+          <p>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }} </p>
         </div>
     </div>
 
@@ -94,7 +94,10 @@
 <div class="row">
     <div class="col-md-12">
         @if($venda->pago == 0)
-            <div class="alert alert-danger">Venda está em aberto.</div>
+            <div class="alert alert-danger">
+                Venda está em aberto.
+                button
+            </div>
         @else
             <div class="alert alert-success">Venda paga.</div>
         @endif

@@ -38,7 +38,7 @@
     <div class="col-md-2">
         <div class="form-group">
           <label for="valor_final">Valor</label>
-          <input type="number" name="valor_final" id="valor_final" class="form-control">
+          <input type="number" step="0.01" name="valor_final" id="valor_final" class="form-control">
         </div>
     </div>
 

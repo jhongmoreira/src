@@ -34,10 +34,10 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <!-- <i class="fas fa-gear"></i> -->
+                <div class="sidebar-brand-icon">
+                    <img src="{{asset('img/logo_exata.svg')}}" width="50">
                 </div>
-                <div class="sidebar-brand-text mx-3">EXATA T.I. <sup>2.0</sup></div>
+                <div class="sidebar-brand-text mx-3">EXATA T.I.</div>
             </a>
 
             <!-- Divider -->
@@ -358,14 +358,8 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
 
-    <!-- Toast JS -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
-
-    @if (Session::has('msg'))
-        <script>
-            toastr.success("{{ Session::get('msg') }}");
-        </script>
-    @endif -->
+    <!-- JS Próprio-->
+    <script src="{{asset('js/code.js')}}"></script>
 
 
 </body>

@@ -30,7 +30,7 @@
                             @foreach($servicos as $servico)
                             <tr>
                                 <td>{{ $servico->servico }}</td>
-                                <td>{{ $servico->valor }}</td>
+                                <td> {{ 'R$ '. number_format($servico->valor, 2, ',', '.') }}</td>
                                 <td>
                                     <a href="{{ route('editar-servico', $servico->id) }}" class="btn btn-sm btn-warning mt-1"><i class="fa fa-edit"></i></a>
                                 </td>

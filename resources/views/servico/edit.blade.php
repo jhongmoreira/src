@@ -21,7 +21,7 @@
     <div class="col-md-2">
         <div class="form-group">
           <label for="valor">Valor</label>
-          <input type="number" name="valor" id="valor" class="form-control" value="{{$servico->valor}}">
+          <input type="number" step="0.01" name="valor" id="valor" class="form-control" value="{{$servico->valor}}">
         </div>
     </div>  
     

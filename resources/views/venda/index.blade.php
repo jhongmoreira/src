@@ -40,7 +40,7 @@
                                 <td> <a href="{{ route('venda', $venda->id) }}">{{ $venda->id }}</a></td>
                                 <td>{{ $venda->cliente->nome }}</td>
                                 <td>{{ $venda->servico->servico }}</td>
-                                <td>{{ $venda->valor_final }}</td>
+                                <td>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }}</td>
                                 <td>
                                     @if($venda->pago == 0)
                                     <p>Não</p>
