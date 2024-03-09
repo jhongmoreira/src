@@ -17,6 +17,9 @@ return new class extends Migration
             $table->foreignId("cliente")->constraint();
             $table->foreignId("servico")->constraint();
             $table->float("valor_final");
+            $table->date("data_venda");
+            $table->date("data_vencimento");
+            $table->boolean("pago");
 
             $table->foreign('cliente')->references('id')->on('clientes');
             $table->foreign('servico')->references('id')->on('servicos');
