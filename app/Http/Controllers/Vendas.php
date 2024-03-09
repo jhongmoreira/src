@@ -9,6 +9,6 @@ class Vendas extends Controller
 {
     public function index(){
         $vendas = Venda::all();
-        return view('venda.index', ['vendas'=>$venda]);
+        return view('venda.index', ['vendas'=>$vendas]);
     }
 }

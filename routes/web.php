@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Clientes;
 use App\Http\Controllers\Drives;
 use App\Http\Controllers\Servicos;
+use App\Http\Controllers\Vendas;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,5 @@ Route::get('/novo/servico', [Servicos::class, 'create'])->name('novo-servico');
 Route::get('/editar/servico/{id}', [Servicos::class, 'edit'])->name('editar-servico');
 Route::post('/update/servico/{id}', [Servicos::class, 'update'])->name('update-servico');
 Route::post('/salvar/servico', [Servicos::class, 'store'])->name('salvar-servico');
+
+Route::get('/vendas', [Vendas::class, 'index'])->name('vendas');
