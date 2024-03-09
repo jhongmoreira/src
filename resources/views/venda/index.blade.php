@@ -34,7 +34,7 @@
                             @foreach($vendas as $venda)
                             <tr>
                                 <td>{{ $venda->cliente }}</td>
-                                <td>{{ $venda->servico }}</td>
+                                <td>{{ $servico->servico }}</td>
                                 <td>{{ $venda->valor_final }}</td>
                                 <td>{{ $venda->pago }}</td>
                                 <td>

@@ -10,4 +10,9 @@ class Servico extends Model
     use HasFactory;
 
     protected $guarded = [];  
+
+    public function venda()
+    {
+        return $this->belongsTo(Venda::class, 'servico');
+    }
 }
