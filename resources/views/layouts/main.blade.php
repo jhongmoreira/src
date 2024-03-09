@@ -74,6 +74,33 @@
                 </div>
             </li>
 
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-money-bill"></i>
+                    <span>Vendas</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Vendas</h6>
+                        <a class="collapse-item" href="{{ route('nova-venda')}}">Nova</a>
+                        <a class="collapse-item" href="{{ route('vendas') }}">Consultar</a>
+                    </div>
+                </div>
+            </li>
+           
+
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Outros
+            </div>
+
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -87,30 +114,6 @@
                         <h6 class="collapse-header">Serviços</h6>
                         <a class="collapse-item" href="{{ route('novo-servico') }}">Novo</a>
                         <a class="collapse-item" href="{{ route('servicos') }}">Listar</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Vendas
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-money-bill"></i>
-                    <span>Vendas</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Vendas</h6>
-                        <a class="collapse-item" href="{{ route('nova-venda')}}">Nova</a>
-                        <a class="collapse-item" href="{{ route('vendas') }}">Consultar</a>
                     </div>
                 </div>
             </li>
