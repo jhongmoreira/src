@@ -19,6 +19,7 @@
                                 <th>Servico</th>
                                 <th>Valor</th>
                                 <th>Pago</th>
+                                <th>Vencimento</th>
                                 <th>Ação</th>
                             </tr>
                         </thead>
@@ -29,22 +30,28 @@
                                 <th>Servico</th>
                                 <th>Valor</th>
                                 <th>Pago</th>
+                                <th>Vencimento</th>
                                 <th>Ação</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             @foreach($vendas as $venda)
                             <tr>
-                                <td>{{ $venda->id }}</td>
+                                <td> <a href="{{ route('venda', $venda->id) }}">{{ $venda->id }}</a></td>
                                 <td>{{ $venda->cliente->nome }}</td>
                                 <td>{{ $venda->servico->servico }}</td>
                                 <td>{{ $venda->valor_final }}</td>
-                                <td>{{ $venda->pago }}</td>
                                 <td>
-                                    <a href="{{ route('cliente', $venda->id) }}" class="btn btn-sm btn-primary mt-1"><i class="fa fa-eye"></i></a>
-                                    <a href="{{  $venda->id }}" target="_blank" class="btn btn-sm btn-secondary mt-1"><i class="fa fa-folder"></i></a>
-                                    <a href="{{ route('editar-cliente', $venda->id) }}" class="btn btn-sm btn-warning mt-1"><i class="fa fa-edit"></i></a>
-                                    <a href="{{ route('apagar-cliente', $venda->id) }}" class="btn btn-sm btn-danger mt-1"><i class="fa fa-ban"></i></a>
+                                    @if($venda->pago == 0)
+                                    <p>Não</p>
+                                    @else
+                                    <p>Sim</p>
+                                    @endif                                    
+                                </td>
+                                <td>{{  date('d/m/Y', strtotime($venda->data_vencimento)) }}</td>
+                                <td>
+                                    <a href="{{ route('editar-venda', $venda->id) }}" class="btn btn-sm btn-warning mt-1"><i class="fa fa-edit"></i></a>
+                                    <a href="{{ route('apagar-venda', $venda->id) }}" class="btn btn-sm btn-danger mt-1"><i class="fa fa-ban"></i></a>
                                 </td>
                             </tr>
                             @endforeach

@@ -1,12 +1,12 @@
 @extends('layouts.main')
-@section('title','Novo Cliente - Exata TI')
+@section('title','Venda - Exata TI')
 @section('content')
 
 <div class="row">
     <div class="col-md-12"><h3>Vender</h3></div>
 </div>
 
-<form action="{{ route('salvar-cliente') }}" method="post">
+<form action="{{ route('salvar-venda') }}" method="post">
     @csrf
 
 <div class="row">
@@ -48,35 +48,30 @@
 
     <div class="col-md-4">
         <div class="form-group">
-          <label for="whatsapp">Whatsapp</label>
-          <input type="number" name="whatsapp" id="whatsapp" class="form-control">
+          <label for="data_venda">Data Venda</label>
+          <input type="date" name="data_venda" id="data_venda" class="form-control">
         </div>
     </div>
 
     <div class="col-md-4">
         <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" class="form-control">
+          <label for="data_vencimento">Data Vencimento</label>
+          <input type="date" name="data_vencimento" id="data_vencimento" class="form-control">
         </div>
     </div>
 
     <div class="col-md-4">
         <div class="form-group">
-          <label for="pasta">Pasta do Drive</label>
-          <input type="url" name="pasta" id="pasta" class="form-control">
+          <label for="pago">Pago</label>
+            <select id="pago" name="pago" class="form-control" required>
+                <option value=""></option>
+                <option value="1">Sim</option>
+                <option value="0">Não</option>
+            </select>
         </div>
     </div>
 
 </div>   
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="form-group">
-                <label for="obs">Observação</label>
-                <textarea name="obs" id="obs" rows="10" class="form-control"></textarea>
-        </div>
-    </div>
-</div>     
 
 <div class="row">
     <div class="col-md-3">

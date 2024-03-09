@@ -38,3 +38,10 @@ Route::post('/salvar/servico', [Servicos::class, 'store'])->name('salvar-servico
 
 Route::get('/vendas', [Vendas::class, 'index'])->name('vendas');
 Route::get('/nova/venda', [Vendas::class, 'create'])->name('nova-venda');
+Route::post('/salvar/venda', [Vendas::class, 'store'])->name('salvar-venda');
+Route::get('/editar/venda/{id}', [Vendas::class, 'edit'])->name('editar-venda');
+Route::post('/update/venda/{id}', [Vendas::class, 'update'])->name('update-venda');
+Route::get('/apagar/venda/{id}', [Vendas::class, 'delete'])->name('apagar-venda');
+Route::post('/delete/venda/{id}', [Vendas::class, 'destroy'])->name('delete-venda');
+Route::get('/venda/{id}', [Vendas::class, 'show'])->name('venda');
+

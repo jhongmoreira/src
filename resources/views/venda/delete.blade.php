@@ -1,17 +1,17 @@
 @extends('layouts.main')
-@section('title','Detalhe do Cliente - Exata TI')
+@section('title','Apagar Venda - Exata TI')
 @section('content')
 <div class="row">
-    <div class="col-md-12"><h3>{{ $cliente->nome}}</h3></div>
+    <div class="col-md-12"><h3>Venda #{{ $venda->id}}</h3></div>
 </div>
 
 <hr>
 
 <div class="row">
-    <h1>Deseja realmente apagar o cliente acima?</h1>
+    <h1>Deseja realmente apagar a venda acima?</h1>
 </div>
 
-<form action="{{ route('delete-cliente', $cliente->id) }}" method="post">
+<form action="{{ route('delete-venda', $venda->id) }}" method="post">
     @csrf
     <div class="row">    
         <div class="col-md-4 mt-2">

@@ -1,27 +1,52 @@
 @extends('layouts.main')
-@section('title','Novo Cliente - Exata TI')
+@section('title','Editar Venda - Exata TI')
 @section('content')
 
 <div class="row">
-    <div class="col-md-12"><h3>Editando {{ $cliente->nome }}</h3></div>
+    <div class="col-md-12"><h3>Editar Venda #{{ $venda->id}}</h3></div>
 </div>
 
-<form action="{{ route('update-cliente', $cliente->id) }}" method="post">
+<form action="{{ route('update-venda', $venda->id) }}" method="post">
     @csrf
 
 <div class="row">
 
-    <div class="col-md-8">
+    <div class="col-md-6">
         <div class="form-group">
-          <label for="nome">Nome</label>
-          <input type="text" name="nome" id="nome" class="form-control" value="{{ $cliente->nome }}">
+            <label for="cliente">Cliente</label>
+            <select name="cliente" id="cliente" class="form-control" required>
+                <option value=""></option>
+                @foreach($clientes as $cliente)
+                    @if ($venda->cliente_id == $cliente->id)
+                        <option value="{{ $cliente->id }}" selected>{{ $cliente->nome }}</option>
+                    @else
+                        <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
+                    @endif
+                @endforeach
+            </select>
         </div>
     </div>
 
     <div class="col-md-4">
         <div class="form-group">
-          <label for="cpf">CPF</label>
-          <input type="number" name="cpf" id="cpf" class="form-control" value="{{ $cliente->cpf }}">
+            <label for="servico">Serviço</label>
+            <select name="servico" id="servico" class="form-control" required>
+                <option value=""></option>
+                @foreach($servicos as $servico)
+                    @if ($venda->servico_id == $servico->id)                        
+                        <option value="{{ $servico->id }}" selected>{{ $servico->servico }}</option>
+                    @else
+                        <option value="{{ $servico->id }}">{{ $servico->servico }}</option>
+                    @endif
+                @endforeach
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="form-group">
+          <label for="valor_final">Valor</label>
+          <input type="number" name="valor_final" id="valor_final" class="form-control" value="{{ $venda->valor_final}}">
         </div>
     </div>
 
@@ -31,35 +56,30 @@
 
     <div class="col-md-4">
         <div class="form-group">
-          <label for="whatsapp">Whatsapp</label>
-          <input type="number" name="whatsapp" id="whatsapp" class="form-control" value="{{ $cliente->whatsapp }}">
+          <label for="data_venda">Data Venda</label>
+          <input type="date" name="data_venda" id="data_venda" class="form-control" value="{{ $venda->data_venda}}">
         </div>
     </div>
 
     <div class="col-md-4">
         <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" class="form-control" value="{{ $cliente->email }}">
+          <label for="data_vencimento">Data Vencimento</label>
+          <input type="date" name="data_vencimento" id="data_vencimento" class="form-control" value="{{ $venda->data_vencimento}}">
         </div>
     </div>
 
     <div class="col-md-4">
         <div class="form-group">
-          <label for="pasta">Pasta do Drive</label>
-          <input type="url" name="pasta" id="pasta" class="form-control" value="{{ $cliente->pasta }}">
+          <label for="pago">Pago</label>
+            <select id="pago" name="pago" class="form-control" required>
+                <option value=""></option>
+                <option value="1" {{ $venda->pago == 1 ? 'selected' : '' }}>Sim</option>
+                <option value="0" {{ $venda->pago == 0 ? 'selected' : '' }}>Não</option>
+            </select>
         </div>
     </div>
 
 </div>   
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="form-group">
-                <label for="obs">Observação</label>
-                <textarea name="obs" id="obs" rows="10" class="form-control">{{ $cliente->obs }}</textarea>
-        </div>
-    </div>
-</div>     
 
 <div class="row">
     <div class="col-md-3">
