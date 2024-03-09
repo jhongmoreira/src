@@ -19,22 +19,25 @@
                                 <th>Servico</th>
                                 <th>Valor</th>
                                 <th>Pago</th>
+                                <th>Ação</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                            <th>#</th>
+                                <th>#</th>
                                 <th>Cliente</th>
                                 <th>Servico</th>
                                 <th>Valor</th>
                                 <th>Pago</th>
+                                <th>Ação</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             @foreach($vendas as $venda)
                             <tr>
-                                <td>{{ $cliente->nome }}</td>
-                                <td>{{ $servico->servico }}</td>
+                                <td>{{ $venda->id }}</td>
+                                <td>{{ $venda->cliente->nome }}</td>
+                                <td>{{ $venda->servico->servico }}</td>
                                 <td>{{ $venda->valor_final }}</td>
                                 <td>{{ $venda->pago }}</td>
                                 <td>

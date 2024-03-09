@@ -13,4 +13,9 @@ class Cliente extends Model
 
     protected $guarded = [];  
 
+    // public function vendas(): HasMany
+    // {
+    //     return $this->hasMany(Venda::class, 'cliente');
+    // }
+
 }

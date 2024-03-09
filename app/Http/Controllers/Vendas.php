@@ -10,14 +10,8 @@ use App\Models\Cliente;
 class Vendas extends Controller
 {
     public function index(){
-        $vendas = Venda::all();
+        $vendas = Venda::with('servico', 'cliente')->get();
 
-        foreach ($vendas as $venda){
-            $servico = Servico::find($venda->servico);
-            $cliente = Cliente::find($venda->cliente);
-        }
-
-
-        return view('venda.index', ['vendas'=>$vendas, 'servico'=>$servico, 'cliente'=>$cliente]);
+        return view('venda.index', ['vendas'=>$vendas]);
     }
 }
