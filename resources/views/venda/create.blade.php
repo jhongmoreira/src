@@ -11,17 +11,34 @@
 
 <div class="row">
 
-    <div class="col-md-8">
+    <div class="col-md-6">
         <div class="form-group">
-          <label for="nome">Nome</label>
-          <input type="text" name="nome" id="nome" class="form-control">
+            <label for="cliente">Cliente</label>
+            <select name="cliente" id="cliente" class="form-control" required>
+                <option value=""></option>
+                @foreach($clientes as $cliente)
+                    <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
+                @endforeach
+            </select>
         </div>
     </div>
 
     <div class="col-md-4">
         <div class="form-group">
-          <label for="cpf">CPF</label>
-          <input type="number" name="cpf" id="cpf" class="form-control">
+            <label for="servico">Serviço</label>
+            <select name="servico" id="servico" class="form-control" required>
+                <option value=""></option>
+                @foreach($servicos as $servico)
+                    <option value="{{ $servico->id }}">{{ $servico->servico }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="form-group">
+          <label for="valor_final">Valor</label>
+          <input type="number" name="valor_final" id="valor_final" class="form-control">
         </div>
     </div>
 

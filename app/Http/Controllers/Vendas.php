@@ -17,7 +17,8 @@ class Vendas extends Controller
 
     public function create(){
         $clientes = Cliente::all();
+        $servicos = Servico::all();
 
-        return view('venda.create', ['clientes'=>$clientes]);
+        return view('venda.create', ['clientes'=>$clientes, 'servicos'=>$servicos]);
     }
 }
