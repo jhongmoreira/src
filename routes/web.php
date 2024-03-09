@@ -6,6 +6,7 @@ use App\Http\Controllers\Clientes;
 use App\Http\Controllers\Drives;
 use App\Http\Controllers\Servicos;
 use App\Http\Controllers\Vendas;
+use App\Http\Controllers\Orders;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +45,12 @@ Route::post('/update/venda/{id}', [Vendas::class, 'update'])->name('update-venda
 Route::get('/apagar/venda/{id}', [Vendas::class, 'delete'])->name('apagar-venda');
 Route::post('/delete/venda/{id}', [Vendas::class, 'destroy'])->name('delete-venda');
 Route::get('/venda/{id}', [Vendas::class, 'show'])->name('venda');
+
+Route::get('/ordens', [Orders::class, 'index'])->name('ordens');
+Route::get('/nova/ordem', [Orders::class, 'create'])->name('nova-ordem');
+Route::post('/salvar/ordem', [Orders::class, 'store'])->name('salvar-ordem');
+Route::get('/editar/ordem/{id}', [Orders::class, 'edit'])->name('editar-ordem');
+Route::post('/update/ordem/{id}', [Orders::class, 'update'])->name('update-ordem');
+
+
 
