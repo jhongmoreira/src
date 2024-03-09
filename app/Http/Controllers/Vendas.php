@@ -14,4 +14,10 @@ class Vendas extends Controller
 
         return view('venda.index', ['vendas'=>$vendas]);
     }
+
+    public function create(){
+        $clientes = Cliente::all();
+
+        return view('venda.create', ['clientes'=>$clientes]);
+    }
 }

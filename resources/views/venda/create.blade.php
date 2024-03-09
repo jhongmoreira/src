@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12"><h3>Novo Cliente</h3></div>
+    <div class="col-md-12"><h3>Vender</h3></div>
 </div>
 
 <form action="{{ route('salvar-cliente') }}" method="post">

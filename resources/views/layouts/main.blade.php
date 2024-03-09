@@ -109,8 +109,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Vendas</h6>
-                        <a class="collapse-item" href="login.html">Nova</a>
-                        <a class="collapse-item" href="register.html">Consultar</a>
+                        <a class="collapse-item" href="{{ route('nova-venda')}}">Nova</a>
+                        <a class="collapse-item" href="{{ route('vendas') }}">Consultar</a>
                     </div>
                 </div>
             </li>

@@ -37,3 +37,4 @@ Route::post('/update/servico/{id}', [Servicos::class, 'update'])->name('update-s
 Route::post('/salvar/servico', [Servicos::class, 'store'])->name('salvar-servico');
 
 Route::get('/vendas', [Vendas::class, 'index'])->name('vendas');
+Route::get('/nova/venda', [Vendas::class, 'create'])->name('nova-venda');
