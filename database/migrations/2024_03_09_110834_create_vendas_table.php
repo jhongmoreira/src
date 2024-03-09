@@ -14,15 +14,15 @@ return new class extends Migration
         Schema::create('vendas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId("cliente")->constraint();
-            $table->foreignId("servico")->constraint();
+            $table->foreignId("cliente_id")->constraint();
+            $table->foreignId("servico_id")->constraint();
             $table->float("valor_final");
             $table->date("data_venda");
             $table->date("data_vencimento");
             $table->boolean("pago");
 
-            $table->foreign('cliente')->references('id')->on('clientes');
-            $table->foreign('servico')->references('id')->on('servicos');
+            $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->foreign('servico_id')->references('id')->on('servicos');
 
         });
     }

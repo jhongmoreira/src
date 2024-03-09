@@ -11,4 +11,9 @@ class Venda extends Model
 
     protected $guarded = [];  
 
+    public function servico(): BelongsTo
+    {
+        return $this->belongsTo(Servico::class, "servico");
+    }
+
 }
