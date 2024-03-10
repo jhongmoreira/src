@@ -26,6 +26,11 @@
                         <i class="fas fa-money-bill fa-2x text-gray-300"></i>
                     </div>
                 </div>
+                <div class="row mt-1">
+                    <div class="col-md-12">
+                        <a href="{{ route('vendas') }}" class="button btn-sm btn-success"><i class="fa fa-eye"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -42,6 +47,11 @@
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-12">
+                        <a href="{{ route('vendas') }}" class="button btn-sm btn-warning"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
@@ -62,6 +72,11 @@
                         <i class="fas fa-list fa-2x text-gray-300"></i>
                     </div>
                 </div>
+                <div class="row mt-1">
+                    <div class="col-md-12">
+                        <a href="{{ route('ordens') }}" class="button btn-sm btn-danger"><i class="fa fa-eye"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -78,6 +93,11 @@
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-check fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-12">
+                        <a href="{{ route('ordens') }}" class="button btn-sm btn-info"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
