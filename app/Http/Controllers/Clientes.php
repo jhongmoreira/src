@@ -34,7 +34,7 @@ class Clientes extends Controller
         // return redirect('/')->with('msg','Registro salvo com sucesso.');
 
         //Implmenetação com toastr
-        toastr()->success('Data has been saved successfully!');
+        toastr()->success('Cliente cadastrado.');
         return back();
 
     }
