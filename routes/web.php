@@ -19,38 +19,48 @@ use App\Http\Controllers\Orders;
 |
 */
 
-Route::get('/', [Dashboard::class, 'index'])->name('home');
+Route::get('/', [Dashboard::class, 'index'])->name('home')->middleware('auth');
 
 //Clientes
-Route::get('/cadastrar/clientes', [Clientes::class, 'create'])->name('cadastrar-cliente');
-Route::post('/cliente/salvar', [Clientes::class, 'store'])->name('salvar-cliente');
-Route::get('/clientes', [Clientes::class, 'index'])->name('clientes');
-Route::get('/cliente/{id}', [Clientes::class, 'show'])->name('cliente');
-Route::get('/editar/cliente/{id}', [Clientes::class, 'edit'])->name('editar-cliente');
-Route::post('/update/cliente/{id}', [Clientes::class, 'update'])->name('update-cliente');
-Route::get('/apagar/cliente/{id}', [Clientes::class, 'delete'])->name('apagar-cliente');
-Route::post('/delete/cliente/{id}', [Clientes::class, 'destroy'])->name('delete-cliente');
+Route::get('/cadastrar/clientes', [Clientes::class, 'create'])->name('cadastrar-cliente')->middleware('auth');
+Route::post('/cliente/salvar', [Clientes::class, 'store'])->name('salvar-cliente')->middleware('auth');
+Route::get('/clientes', [Clientes::class, 'index'])->name('clientes')->middleware('auth');
+Route::get('/cliente/{id}', [Clientes::class, 'show'])->name('cliente')->middleware('auth');
+Route::get('/editar/cliente/{id}', [Clientes::class, 'edit'])->name('editar-cliente')->middleware('auth');
+Route::post('/update/cliente/{id}', [Clientes::class, 'update'])->name('update-cliente')->middleware('auth');
+Route::get('/apagar/cliente/{id}', [Clientes::class, 'delete'])->name('apagar-cliente')->middleware('auth');
+Route::post('/delete/cliente/{id}', [Clientes::class, 'destroy'])->name('delete-cliente')->middleware('auth');
 
-Route::get('/servicos', [Servicos::class, 'index'])->name('servicos');
-Route::get('/novo/servico', [Servicos::class, 'create'])->name('novo-servico');
-Route::get('/editar/servico/{id}', [Servicos::class, 'edit'])->name('editar-servico');
-Route::post('/update/servico/{id}', [Servicos::class, 'update'])->name('update-servico');
-Route::post('/salvar/servico', [Servicos::class, 'store'])->name('salvar-servico');
+Route::get('/servicos', [Servicos::class, 'index'])->name('servicos')->middleware('auth');
+Route::get('/novo/servico', [Servicos::class, 'create'])->name('novo-servico')->middleware('auth');
+Route::get('/editar/servico/{id}', [Servicos::class, 'edit'])->name('editar-servico')->middleware('auth');
+Route::post('/update/servico/{id}', [Servicos::class, 'update'])->name('update-servico')->middleware('auth');
+Route::post('/salvar/servico', [Servicos::class, 'store'])->name('salvar-servico')->middleware('auth');
 
-Route::get('/vendas', [Vendas::class, 'index'])->name('vendas');
-Route::get('/nova/venda', [Vendas::class, 'create'])->name('nova-venda');
-Route::post('/salvar/venda', [Vendas::class, 'store'])->name('salvar-venda');
-Route::get('/editar/venda/{id}', [Vendas::class, 'edit'])->name('editar-venda');
-Route::post('/update/venda/{id}', [Vendas::class, 'update'])->name('update-venda');
-Route::get('/apagar/venda/{id}', [Vendas::class, 'delete'])->name('apagar-venda');
-Route::post('/delete/venda/{id}', [Vendas::class, 'destroy'])->name('delete-venda');
+Route::get('/vendas', [Vendas::class, 'index'])->name('vendas')->middleware('auth');
+Route::get('/nova/venda', [Vendas::class, 'create'])->name('nova-venda')->middleware('auth');
+Route::post('/salvar/venda', [Vendas::class, 'store'])->name('salvar-venda')->middleware('auth');
+Route::get('/editar/venda/{id}', [Vendas::class, 'edit'])->name('editar-venda')->middleware('auth');
+Route::post('/update/venda/{id}', [Vendas::class, 'update'])->name('update-venda')->middleware('auth');
+Route::get('/apagar/venda/{id}', [Vendas::class, 'delete'])->name('apagar-venda')->middleware('auth');
+Route::post('/delete/venda/{id}', [Vendas::class, 'destroy'])->name('delete-venda')->middleware('auth');
 Route::get('/venda/{id}', [Vendas::class, 'show'])->name('venda');
 
-Route::get('/ordens', [Orders::class, 'index'])->name('ordens');
-Route::get('/nova/ordem', [Orders::class, 'create'])->name('nova-ordem');
-Route::post('/salvar/ordem', [Orders::class, 'store'])->name('salvar-ordem');
-Route::get('/editar/ordem/{id}', [Orders::class, 'edit'])->name('editar-ordem');
-Route::post('/update/ordem/{id}', [Orders::class, 'update'])->name('update-ordem');
+Route::get('/ordens', [Orders::class, 'index'])->name('ordens')->middleware('auth');
+Route::get('/nova/ordem', [Orders::class, 'create'])->name('nova-ordem')->middleware('auth');
+Route::post('/salvar/ordem', [Orders::class, 'store'])->name('salvar-ordem')->middleware('auth');
+Route::get('/editar/ordem/{id}', [Orders::class, 'edit'])->name('editar-ordem')->middleware('auth');
+Route::post('/update/ordem/{id}', [Orders::class, 'update'])->name('update-ordem')->middleware('auth');
 
 
 
+
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
