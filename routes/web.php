@@ -52,7 +52,8 @@ Route::post('/salvar/ordem', [Orders::class, 'store'])->name('salvar-ordem')->mi
 Route::get('/editar/ordem/{id}', [Orders::class, 'edit'])->name('editar-ordem')->middleware('auth');
 Route::post('/update/ordem/{id}', [Orders::class, 'update'])->name('update-ordem')->middleware('auth');
 
-Auth::routes();
+Route::post('login', [UserController::class,'login'])->name('login');
+
 
 // Route::middleware([
 //     'auth:sanctum',
