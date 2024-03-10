@@ -1,6 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
+            <x-authentication-card-logo />
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -12,10 +13,7 @@
         @endif
 
         <form method="POST" action="{{ route('login') }}">
-        <img src="{{ asset('img/logo_exata_dark.svg') }}" style="width: 50%; margin: 0 auto;" class="mb-2" alt="Logotipo">
-
             @csrf
-
             <div>
                 <x-label for="email" value="{{ __('E-mail') }}" />
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
