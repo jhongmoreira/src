@@ -15,6 +15,18 @@ class Vendas extends Controller
         return view('venda.index', ['vendas'=>$vendas]);
     }
 
+    public function indexAbertas(){
+        $vendas = Venda::with('servico', 'cliente')->where('pago', 0)->get();
+
+        return view('venda.index', ['vendas'=>$vendas]);
+    }
+
+    public function indexPagas(){
+        $vendas = Venda::with('servico', 'cliente')->where('pago', 1)->get();
+
+        return view('venda.index', ['vendas'=>$vendas]);
+    }
+
     public function create(){
         $clientes = Cliente::all();
         $servicos = Servico::all();

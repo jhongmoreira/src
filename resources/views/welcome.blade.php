@@ -28,7 +28,7 @@
                 </div>
                 <div class="row mt-1">
                     <div class="col-md-12">
-                        <a href="{{ route('vendas') }}" class="button btn-sm btn-success"><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('vendas-pagas') }}" class="button btn-sm btn-success"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="row mt-1">
                     <div class="col-md-12">
-                        <a href="{{ route('vendas') }}" class="button btn-sm btn-warning"><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('vendas-abertas') }}" class="button btn-sm btn-warning"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="row mt-1">
                     <div class="col-md-12">
-                        <a href="{{ route('ordens') }}" class="button btn-sm btn-danger"><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('ordens-abertas') }}" class="button btn-sm btn-danger"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="row mt-1">
                     <div class="col-md-12">
-                        <a href="{{ route('ordens') }}" class="button btn-sm btn-info"><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('ordens-fechadas') }}" class="button btn-sm btn-info"><i class="fa fa-eye"></i></a>
                     </div>
                 </div>
             </div>

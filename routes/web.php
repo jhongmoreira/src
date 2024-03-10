@@ -38,6 +38,8 @@ Route::post('/update/servico/{id}', [Servicos::class, 'update'])->name('update-s
 Route::post('/salvar/servico', [Servicos::class, 'store'])->name('salvar-servico')->middleware('auth');
 
 Route::get('/vendas', [Vendas::class, 'index'])->name('vendas')->middleware('auth');
+Route::get('/vendas/abertas/', [Vendas::class, 'indexAbertas'])->name('vendas-abertas')->middleware('auth');
+Route::get('/vendas/pagas/', [Vendas::class, 'indexPagas'])->name('vendas-pagas')->middleware('auth');
 Route::get('/nova/venda', [Vendas::class, 'create'])->name('nova-venda')->middleware('auth');
 Route::post('/salvar/venda', [Vendas::class, 'store'])->name('salvar-venda')->middleware('auth');
 Route::get('/editar/venda/{id}', [Vendas::class, 'edit'])->name('editar-venda')->middleware('auth');
@@ -47,6 +49,8 @@ Route::post('/delete/venda/{id}', [Vendas::class, 'destroy'])->name('delete-vend
 Route::get('/venda/{id}', [Vendas::class, 'show'])->name('venda');
 
 Route::get('/ordens', [Orders::class, 'index'])->name('ordens')->middleware('auth');
+Route::get('/ordens/abertas', [Orders::class, 'indexAbertas'])->name('ordens-abertas')->middleware('auth');
+Route::get('/ordens/fechadas', [Orders::class, 'indexFechadas'])->name('ordens-fechadas')->middleware('auth');
 Route::get('/nova/ordem', [Orders::class, 'create'])->name('nova-ordem')->middleware('auth');
 Route::post('/salvar/ordem', [Orders::class, 'store'])->name('salvar-ordem')->middleware('auth');
 Route::get('/editar/ordem/{id}', [Orders::class, 'edit'])->name('editar-ordem')->middleware('auth');

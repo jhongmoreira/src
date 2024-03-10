@@ -15,6 +15,18 @@ class Orders extends Controller
         return view('ordem.index', ['orders'=>$orders]);
     }
 
+    public function indexAbertas(){
+        $orders = Order::with('cliente')->where('finalizado', 0)->get();
+
+        return view('ordem.index', ['orders'=>$orders]);
+    }
+
+    public function indexFechadas(){
+        $orders = Order::with('cliente')->where('finalizado', 1)->get();
+
+        return view('ordem.index', ['orders'=>$orders]);
+    }
+
     public function create(){
         $clientes = Cliente::all();
 

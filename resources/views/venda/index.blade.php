@@ -5,8 +5,16 @@
     <div class="col-md-12">
 
         <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Vendas</h6>
+        <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">
+                @if(request()->is('vendas/pagas'))
+                    Vendas Recebidas
+                @elseif(request()->is('vendas/abertas'))
+                    Vendas á Receber
+                @else
+                    Todas as Vendas
+                @endif
+                </h6>
             </div>
 
             <div class="card-body">
