@@ -49,7 +49,7 @@ class Orders extends Controller
 
         $ordem->save();    
    
-        toastr()->success('Status atualizado!');
+        toastr()->success('Status atualizado.');
         return redirect('/ordens');
     }
 }
