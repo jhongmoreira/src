@@ -99,7 +99,6 @@
         @if($venda->pago == 0)
             <div class="alert alert-danger">
                 Venda está em aberto.
-                button
             </div>
         @else
             <div class="alert alert-success">Venda paga.</div>
