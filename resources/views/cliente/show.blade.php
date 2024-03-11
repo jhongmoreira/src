@@ -68,7 +68,6 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Servico</th>
                                 <th>Valor</th>
                                 <th>Pago</th>
@@ -78,7 +77,6 @@
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>#</th>
                                 <th>Servico</th>
                                 <th>Valor</th>
                                 <th>Pago</th>
@@ -89,7 +87,6 @@
                         <tbody>
                             @foreach($cliente->vendas as $venda)
                             <tr>
-                                <td> <a href="{{ route('venda', $venda->id) }}">{{ $venda->id }}</a></td>
                                 <td>{{ $venda->servico->servico }}</td>
                                 <td>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }}</td>
                                 <td>
@@ -101,6 +98,7 @@
                                 </td>
                                 <td>{{  date('d/m/Y', strtotime($venda->data_vencimento)) }}</td>
                                 <td>
+                                    <a href="{{ route('venda', $venda->id) }}" class="btn btn-sm btn-primary mt-1"><i class="fa fa-eye"></i></a>
                                     <a href="{{ route('editar-venda', $venda->id) }}" class="btn btn-sm btn-warning mt-1"><i class="fa fa-edit"></i></a>
                                     <a href="{{ route('apagar-venda', $venda->id) }}" class="btn btn-sm btn-danger mt-1"><i class="fa fa-ban"></i></a>
                                 </td>
