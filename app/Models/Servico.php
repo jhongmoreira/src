@@ -11,8 +11,8 @@ class Servico extends Model
 
     protected $guarded = [];  
 
-    public function vendas(): HasMany
+    public function servicos(): HasMany
     {
-        return $this->hasMany(Venda::class, 'servico');
+        return $this->hasMany(Venda::class, 'servico_id');
     }
 }

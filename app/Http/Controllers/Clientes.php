@@ -55,7 +55,9 @@ class Clientes extends Controller
     }
 
     public function show($id){
-        $cliente = Cliente::findOrFail($id);
+        
+        // $cliente = Cliente::findOrFail($id);
+        $cliente = Cliente::with('servicos', 'vendas')->findOrFail($id);
 
         return view('cliente.show', ['cliente'=>$cliente]);
     }
