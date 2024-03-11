@@ -47,6 +47,7 @@ Route::post('/update/venda/{id}', [Vendas::class, 'update'])->name('update-venda
 Route::get('/apagar/venda/{id}', [Vendas::class, 'delete'])->name('apagar-venda')->middleware('auth');
 Route::post('/delete/venda/{id}', [Vendas::class, 'destroy'])->name('delete-venda')->middleware('auth');
 Route::get('/venda/{id}', [Vendas::class, 'show'])->name('venda');
+Route::get('/fatura/{id}', [Vendas::class, 'invoice'])->name('fatura');
 
 Route::get('/ordens', [Orders::class, 'index'])->name('ordens')->middleware('auth');
 Route::get('/ordens/abertas', [Orders::class, 'indexAbertas'])->name('ordens-abertas')->middleware('auth');

@@ -94,5 +94,11 @@ class Vendas extends Controller
 
         return view('venda.show', ['venda'=>$venda]);
     }
+
+    public function invoice($id){
+        $venda = Venda::with('servico', 'cliente')->findOrFail($id);
+
+        return view('venda.invoice', ['venda'=>$venda]);
+    }
     
 }

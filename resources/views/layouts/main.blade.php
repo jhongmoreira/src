@@ -405,6 +405,35 @@
     <!-- JS Próprio-->
     <script src="{{asset('js/code.js')}}"></script>
 
+    <!-- jsToPDF e htmlToCanvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+
+        // Convert HTML content to PDF
+        function Convert_HTML_To_PDF() {
+            var doc = new jsPDF();
+            
+            // Source HTMLElement or a string containing HTML.
+            var elementHTML = document.querySelector("#relatorio");
+
+            doc.html(elementHTML, {
+                callback: function(doc) {
+                    // Save the PDF
+                    doc.save('document-html.pdf');
+                },
+                margin: [10, 10, 10, 10],
+                autoPaging: 'text',
+                x: 0,
+                y: 0,
+                width: 190, //target width in the PDF document
+                windowWidth: 1000 //window width in CSS pixels
+            });
+        }
+    </script>
+
 
 </body>
 

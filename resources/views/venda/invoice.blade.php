@@ -7,6 +7,22 @@
 <div class="row">
     <div class="col-md-12"><h3>{{ $venda->cliente->nome}}</h3></div>
 </div>
+<div class="row">
+    <div class="col-md-12"><h5>Fatura #{{ $venda->id}}</h5></div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @if($venda->pago == 0)
+            <div class="alert alert-danger">
+                Venda está em aberto.
+                button
+            </div>
+        @else
+            <div class="alert alert-success">Venda paga.</div>
+        @endif
+    </div>
+</div>
 
 <div class="row">
 
@@ -21,7 +37,7 @@
         <div class="form-group">
           <label for="whatsapp"><b>WhatsApp</b></label>
           <div>
-              <a href="https://wa.me/+55{{ $venda->cliente->whatsapp}}" target="_blank"><i class="fa fa-link"></i> {{ $venda->cliente->whatsapp}}</a>
+              {{ $venda->cliente->whatsapp}}
           </div>
         </div>
     </div>
@@ -33,14 +49,6 @@
         </div>
     </div>
 
-</div>
-
-<div class="row">
-    <div class="col-md-2">
-        <a href="{{ $venda->cliente->pasta}}" target="_blank" class="btn btn-sm btn-primary" >
-            <i class="fa fa-folder"></i> Abrir Pasta
-        </a>
-    </div>
 </div>
 
 <div class="row mt-3">
@@ -94,29 +102,47 @@
 
 </div>
 
+<hr>
+
 <div class="row">
-    <div class="col-md-12">
-        @if($venda->pago == 0)
-            <div class="alert alert-danger">
-                Venda está em aberto.
-                button
-            </div>
-        @else
-            <div class="alert alert-success">Venda paga.</div>
-        @endif
+
+    <div class="col-md-4">
+        <div class="form-group">
+          <label for="cpf"><b>Forma de Pagamento</b></label>
+          <p>PIX</p>
+        </div>
     </div>
-</div>
+
+    <div class="col-md-5">
+        <div class="form-group">
+          <label for="cpf"><b>Chave PIX</b></label>
+          <p>E-mail: guilhermecoopadap@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-group">
+          <label for="cpf"><b>Total</b></label>
+          <h4>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }}</h4>
+        </div>
+    </div>
+
 </div>
 
-<div class="d-sm-flex align-items-center justify-content-between mb-4t">
-    <a href="{{ route('fatura', $venda->id) }}"  class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm align-self-end ml-auto"><i
-            class="fas fa-download fa-sm text-white-50"></i> Gerar PDF </a>
+<hr>
+
+<div class="row">
+    <div class="col-md-12">
+        <p>Informações geradas em {{ $ldate = date('d/m/Y H:i:s') }}</p>
+    </div>
+</div>
+
 </div>
 
 <!-- Page Heading -->
-<!-- <div class="d-sm-flex align-items-center justify-content-between mb-4t">
+<div class="d-sm-flex align-items-center justify-content-between mb-4t">
     <a href="#"  onclick="Convert_HTML_To_PDF();" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm align-self-end ml-auto"><i
             class="fas fa-download fa-sm text-white-50"></i> Gerar PDF </a>
-</div> -->
+</div>
 
 @endsection
