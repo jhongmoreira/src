@@ -110,7 +110,7 @@
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4t">
     <a href="{{ route('fatura', $venda->id) }}"  class="d-sm-inline-block btn btn-sm btn-primary shadow-sm align-self-end ml-auto"><i
-            class="fas fa-download fa-sm text-white-50"></i> Gerar PDF </a>
+            class="fas fa-download fa-sm text-white-50"></i> Faturar </a>
 </div>
 
 <!-- Page Heading -->
