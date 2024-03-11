@@ -141,7 +141,7 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4t">
-    <a href="#"  onclick="Convert_HTML_To_PDF();" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm align-self-end ml-auto"><i
+    <a href="#"  onclick="Convert_HTML_To_PDF();" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm align-self-end ml-auto"><i
             class="fas fa-download fa-sm text-white-50"></i> Gerar PDF </a>
 </div>
 
