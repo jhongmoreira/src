@@ -14,7 +14,7 @@ class Vendas extends Controller
 
         return view('venda.index', ['vendas'=>$vendas]);
     }
-
+    
     public function indexAbertas(){
         $vendas = Venda::with('servico', 'cliente')->where('pago', 0)->get();
 

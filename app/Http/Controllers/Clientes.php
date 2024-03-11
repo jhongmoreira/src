@@ -10,10 +10,25 @@ use App\Models\Cliente;
 class Clientes extends Controller
 {
     public function index(){
-        $clientes = Cliente::all();
+
+        $search = request('buscar');
+
+        if ($search){
+            $clientes = Cliente::where('nome', 'like', '%' . $search . '%')->get();
+        }else{
+            $clientes = Cliente::all();
+        }
 
         return view('cliente.index',['clientes'=>$clientes]);
     }
+
+    // public function buscar(){
+    //     $search = request('buscar');
+
+    //     $clientes = Cliente::where('nome', 'like', '%' . $search . '%')->get();
+
+    //     return view('cliente.index',['clientes'=>$clientes]);
+    // }
 
     public function create(){
         return view('cliente.create',[]);
