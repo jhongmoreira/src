@@ -24,6 +24,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Cliente</th>
+                                <th>Data</th>
                                 <th>Status</th>
                                 <th>Ação</th>
                             </tr>
@@ -32,6 +33,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Cliente</th>
+                                <th>Data</th>
                                 <th>Status</th>
                                 <th>Ação</th>
                             </tr>
@@ -41,6 +43,7 @@
                             <tr>
                                 <td>{{ $order->id }}</td>
                                 <td>{{ $order->cliente->nome }}</td>
+                                <td>{{  date('d/m/Y', strtotime($order->data_cadastro)) }}</td>
                                 <td>
                                     @if ($order->finalizado == 0)
                                         <span class="badge badge-danger">Em andamento</span>
