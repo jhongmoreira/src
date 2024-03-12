@@ -43,7 +43,7 @@
                         <tbody>
                             @foreach($vendas as $venda)
                             <tr>
-                                <td>{{ $venda->cliente->nome }}</td>
+                                <td><a href="{{ route('cliente', $venda->cliente->id) }}">{{ $venda->cliente->nome }}</a></td>
                                 <td>{{ $venda->servico->servico }}</td>
                                 <td>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }}</td>
                                 <td>
