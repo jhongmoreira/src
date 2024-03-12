@@ -13,13 +13,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        @if($venda->pago == 0)
-            <div class="alert alert-danger">
-                Venda está em aberto.
-            </div>
-        @else
-            <div class="alert alert-success">Venda paga.</div>
-        @endif
+
     </div>
 </div>
 
@@ -115,20 +109,6 @@
         </div>
     </div>
 
-    <div class="col-md-2">
-        <div class="form-group">
-          <label for="valor"><b>Valor</b></label>
-          <p>{{ 'R$ ' . number_format($venda->servico->valor, 2, ',', '.'); }}</p>
-        </div>
-    </div>
-
-    <div class="col-md-2">
-        <div class="form-group">
-          <label for="valor"><b>Total c/ Desconto</b></label>
-          <p>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }} </p>
-        </div>
-    </div>
-
     
     <div class="col-md-2">
         <div class="form-group">
@@ -144,23 +124,44 @@
         </div>
     </div>
 
-</div>
-
-<div class="row">
-    <div class="col-md-12 justify-content-end">
+    <div class="col-md-2">
         <div class="form-group">
-            <label for="cpf"><b>Total</b></label>
-            <h4>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }}</h4>
+          <label for="valor"><b>Valor</b></label>
+          <p>{{ 'R$ ' . number_format($venda->servico->valor, 2, ',', '.'); }}</p>
         </div>
     </div>
+
+    <div class="col-md-2">
+        <div class="form-group">
+          <label for="valor"><b>Desconto</b></label>
+          <p>{{ 'R$ ' . number_format($venda->servico->valor-$venda->valor_final, 2, ',', '.'); }}</p>
+        </div>
+    </div>
+
 </div>
 
 <hr>
 
-
 <div class="row">
-    <div class="col-md-12">
-        <p>Informações geradas em {{ $ldate = date('d/m/Y H:i:s') }}</p>
+    <div class="col-md-5 text-center">
+        @if($venda->pago == 0)
+            <div class="alert alert-danger">
+                <b>Em Aberto.</b>
+                <p>Informações geradas em {{ $ldate = date('d/m/Y H:i:s') }}</p>
+            </div>
+        @else
+            <div class="alert alert-success">
+                <b>Pago</b>
+                <p>Informações geradas em {{ $ldate = date('d/m/Y H:i:s') }}</p>
+            </div>
+        @endif
+    </div>
+    <div class="col-md-5"></div>
+    <div class="col-md-2 alert">
+        <div class="form-group">
+            <label for="cpf"><b>Total Final</b></label>
+            <h3>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }}</h3>
+        </div>
     </div>
 </div>
 
