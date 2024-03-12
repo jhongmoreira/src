@@ -47,6 +47,7 @@
         <div class="form-group">
           <label for="pasta">Pasta do Drive</label>
           <input type="url" name="pasta" id="pasta" class="form-control">
+          <small id="pastaNova" class="form-text text-right"><a href="https://drive.google.com/drive/folders/172sc5ZNVk3ohVFMiB2tN6fkMGphpfPBn" target="_blank">Criar Pasta</a></small>
         </div>
     </div>
 
