@@ -63,6 +63,51 @@
 
 <div class="row">
 
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="prestador"><b>Prestador do Serviço:</b></label>
+          <p>{{ $empresa->nome_empresa}}</p>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="form-group">
+          <label for="telefone"><b>Telefone</b></label>
+          <p>{{ $empresa->telefone }}</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-group">
+          <label for="cpf"><b>E-mail</b></label>
+          <p>{{ $empresa->email }}</p>
+        </div>
+    </div>
+    
+</div>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="form-group">
+          <label for="forma"><b>Forma de Pagamento:</b></label>
+          <p>PIX/Transferência</p>
+        </div>
+    </div>
+
+    <div class="col-md-5">
+        <div class="form-group">
+          <label for="telefone"><b>Chave PIX:</b></label>
+          <p>{{ $empresa->pix }}</p>
+        </div>
+    </div>
+    
+</div>
+
+<hr>
+
+<div class="row">
+
     <div class="col-md-4">
         <div class="form-group">
           <label for="servico"><b>Serviço</b></label>
@@ -101,34 +146,17 @@
 
 </div>
 
-<hr>
-
 <div class="row">
-
-    <div class="col-md-4">
+    <div class="col-md-12 justify-content-end">
         <div class="form-group">
-          <label for="cpf"><b>Forma de Pagamento</b></label>
-          <p>PIX</p>
+            <label for="cpf"><b>Total</b></label>
+            <h4>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }}</h4>
         </div>
     </div>
-
-    <div class="col-md-5">
-        <div class="form-group">
-          <label for="cpf"><b>Chave PIX</b></label>
-          <p>E-mail: guilhermecoopadap@gmail.com</p>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="form-group">
-          <label for="cpf"><b>Total</b></label>
-          <h4>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }}</h4>
-        </div>
-    </div>
-
 </div>
 
 <hr>
+
 
 <div class="row">
     <div class="col-md-12">

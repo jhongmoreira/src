@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Venda;
 use App\Models\Servico;
 use App\Models\Cliente;
+use App\Models\Empresa;
 
 class Vendas extends Controller
 {
@@ -97,8 +98,9 @@ class Vendas extends Controller
 
     public function invoice($id){
         $venda = Venda::with('servico', 'cliente')->findOrFail($id);
+        $empresa = Empresa::findOrFail(1);
 
-        return view('venda.invoice', ['venda'=>$venda]);
+        return view('venda.invoice', ['venda'=>$venda, 'empresa'=>$empresa]);
     }
     
 }
