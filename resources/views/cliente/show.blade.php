@@ -18,7 +18,7 @@
         <div class="form-group">
           <label for="whatsapp"><b>WhatsApp</b></label>
           <div>
-              <a href="https://wa.me/{{$cliente->whatsapp}}" target="_blank">{{$cliente->whatsapp}} <i class="fa fa-link"></i></a>
+              <a href="https://wa.me/+55{{$cliente->whatsapp}}" target="_blank">{{$cliente->whatsapp}} <i class="fa fa-link"></i></a>
           </div>
         </div>
     </div>
