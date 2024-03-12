@@ -21,6 +21,8 @@ use App\Http\Controllers\Perfils;
 */
 
 Route::get('/', [Dashboard::class, 'index'])->name('home')->middleware('auth');
+Route::get('/perfil', [Perfils::class, 'index'])->name('perfil')->middleware('auth');
+Route::post('/perfil/salvar/{id}', [Perfils::class, 'update'])->name('perfil-salvar')->middleware('auth');
 
 //Clientes
 Route::get('/cadastrar/clientes', [Clientes::class, 'create'])->name('cadastrar-cliente')->middleware('auth');
@@ -58,8 +60,7 @@ Route::post('/salvar/ordem', [Orders::class, 'store'])->name('salvar-ordem')->mi
 Route::get('/editar/ordem/{id}', [Orders::class, 'edit'])->name('editar-ordem')->middleware('auth');
 Route::post('/update/ordem/{id}', [Orders::class, 'update'])->name('update-ordem')->middleware('auth');
 
-Route::get('/profile', [Perfils::class, 'show'])->name('profile')->middleware('auth');
-Route::post('/perfil/salvar/{id}', [Perfils::class, 'update'])->name('perfil-salvar')->middleware('auth');
+
 
 // Route::middleware([
 //     'auth:sanctum',

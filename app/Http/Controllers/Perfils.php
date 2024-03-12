@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class Perfils extends Controller
 {
-    public function show(){
+    public function index(){
         $empresas = Empresa::findOrFail(1);
 
-        return view('perfil.show',['empresas'=>$empresas]);
+        return view('perfil.index',['empresas'=>$empresas]);
     }
 
     public function update(Request $request){
@@ -24,7 +24,7 @@ class Perfils extends Controller
 
         $perfil->save();    
    
-        toastr()->success('Status atualizado.');
-        return redirect('/perfil');
+        toastr()->success('Dados da empresa atualizados');
+        return back();
     }
 }
