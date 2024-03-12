@@ -7,6 +7,7 @@ use App\Http\Controllers\Drives;
 use App\Http\Controllers\Servicos;
 use App\Http\Controllers\Vendas;
 use App\Http\Controllers\Orders;
+use App\Http\Controllers\Perfils;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,8 @@ Route::get('/nova/ordem', [Orders::class, 'create'])->name('nova-ordem')->middle
 Route::post('/salvar/ordem', [Orders::class, 'store'])->name('salvar-ordem')->middleware('auth');
 Route::get('/editar/ordem/{id}', [Orders::class, 'edit'])->name('editar-ordem')->middleware('auth');
 Route::post('/update/ordem/{id}', [Orders::class, 'update'])->name('update-ordem')->middleware('auth');
+
+Route::get('/perfil', [Perfils::class, 'index'])->name('perfil')->middleware('auth');
 
 // Route::middleware([
 //     'auth:sanctum',
