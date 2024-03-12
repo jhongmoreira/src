@@ -2,6 +2,15 @@
 @section('title','Detalhes da Venda - Exata TI')
 @section('content')
 
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Detalhe da Venda</h1>
+    <a href="{{ route('fatura', $venda->id) }}"  class="d-sm-inline-block btn btn-sm btn-primary shadow-sm align-self-end ml-auto">
+        <i class="fas fa-download fa-sm text-white-50"></i> Faturar 
+    </a>
+</div>
+
+
 <div id="relatorio">
 
 <div class="row">
@@ -107,15 +116,5 @@
 </div>
 </div>
 
-<div class="d-sm-flex align-items-center justify-content-between mb-4t">
-    <a href="{{ route('fatura', $venda->id) }}"  class="d-sm-inline-block btn btn-sm btn-primary shadow-sm align-self-end ml-auto"><i
-            class="fas fa-download fa-sm text-white-50"></i> Faturar </a>
-</div>
-
-<!-- Page Heading -->
-<!-- <div class="d-sm-flex align-items-center justify-content-between mb-4t">
-    <a href="#"  onclick="Convert_HTML_To_PDF();" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm align-self-end ml-auto"><i
-            class="fas fa-download fa-sm text-white-50"></i> Gerar PDF </a>
-</div> -->
 
 @endsection
