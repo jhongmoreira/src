@@ -160,7 +160,7 @@
     <div class="col-md-5 text-center">
         @if($venda->pago == 0)
             <div class="alert alert-danger">
-                <b>Em Aberto.</b>
+                <b>Em Aberto</b>
                 <p>Informações geradas em {{ $ldate = date('d/m/Y H:i:s') }}</p>
             </div>
         @else
@@ -170,8 +170,8 @@
             </div>
         @endif
     </div>
-    <div class="col-md-5"></div>
-    <div class="col-md-2 alert">
+    <div class="col-md-3"></div>
+    <div class="col-md-4 alert">
         <div class="form-group">
             <label for="cpf"><b>Total Final</b></label>
             <h3>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }}</h3>
