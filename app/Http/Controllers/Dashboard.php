@@ -14,7 +14,8 @@ class Dashboard extends Controller
         $vencer = Venda::where('pago', 0)->sum('valor_final');
         $order = Order::where('finalizado', 0)->count();
         $orderOk = Order::where('finalizado', 1)->count();
+        $vendaVencida = Venda::where('data_vencimento','<=', date('Y-m-d'))->where('pago', 0)->count();
 
-        return view('welcome',['caixa'=>$caixa, 'vencer'=>$vencer, 'order'=>$order, 'orderOk'=>$orderOk]);
+        return view('welcome',['caixa'=>$caixa, 'vencer'=>$vencer, 'order'=>$order, 'orderOk'=>$orderOk, 'vendaVencida'=>$vendaVencida]);
     }
 }

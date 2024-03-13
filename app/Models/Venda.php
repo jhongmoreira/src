@@ -13,7 +13,7 @@ class Venda extends Model
     use HasFactory;
 
     protected $guarded = [];  
-    protected $dates = ['data'];
+    protected $dates = ['data', 'data_vencimento'];
 
     public function servico(): BelongsTo
     {
