@@ -64,10 +64,17 @@
 
 <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="form-group">
           <label for="prestador"><b>Prestador do Serviço:</b></label>
           <p>{{ $empresa->nome_empresa}}</p>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="form-group">
+          <label for="prestador"><b>CPF/CNPJ:</b></label>
+          <p>{{ $empresa->identificacao}}</p>
         </div>
     </div>
 
