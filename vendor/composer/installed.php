@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '5d63e6c470a40ad90a366698b8498418f52cf982',
+        'reference' => '120aef5346ff10819b21a644651c2d707b737098',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -418,7 +418,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '5d63e6c470a40ad90a366698b8498418f52cf982',
+            'reference' => '120aef5346ff10819b21a644651c2d707b737098',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -531,6 +531,15 @@
             'install_path' => __DIR__ . '/../livewire/livewire',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'lucascudo/laravel-pt-br-localization' => array(
+            'pretty_version' => 'v2.1.2',
+            'version' => '2.1.2.0',
+            'reference' => '0472f83c3ef2352476d5f7763bacf88b59427597',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../lucascudo/laravel-pt-br-localization',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'mobiledetect/mobiledetectlib' => array(
             'pretty_version' => '4.8.06',

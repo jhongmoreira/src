@@ -2613,6 +2613,68 @@
             "install-path": "../livewire/livewire"
         },
         {
+            "name": "lucascudo/laravel-pt-br-localization",
+            "version": "v2.1.2",
+            "version_normalized": "2.1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lucascudo/laravel-pt-BR-localization.git",
+                "reference": "0472f83c3ef2352476d5f7763bacf88b59427597"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lucascudo/laravel-pt-BR-localization/zipball/0472f83c3ef2352476d5f7763bacf88b59427597",
+                "reference": "0472f83c3ef2352476d5f7763bacf88b59427597",
+                "shasum": ""
+            },
+            "time": "2024-03-06T15:49:55+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lucascudo\\LaravelPtBRLocalization\\LaravelPtBRLocalizationServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Lucascudo\\LaravelPtBRLocalization\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Cascudo",
+                    "email": "lucas.sisau@gmail.com"
+                }
+            ],
+            "description": "Arquivos de linguagem em Português do Brasil (pt-BR) para Laravel",
+            "homepage": "https://github.com/lucascudo/laravel-pt-br-localization",
+            "support": {
+                "issues": "https://github.com/lucascudo/laravel-pt-BR-localization/issues",
+                "source": "https://github.com/lucascudo/laravel-pt-BR-localization/tree/v2.1.2"
+            },
+            "funding": [
+                {
+                    "url": "https://buymeacoffee.com/lucasrocha",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/lucascudo",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/lucascudo/laravel-pt-br-localization",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../lucascudo/laravel-pt-br-localization"
+        },
+        {
             "name": "mobiledetect/mobiledetectlib",
             "version": "4.8.06",
             "version_normalized": "4.8.06.0",
@@ -9275,6 +9337,7 @@
         "hamcrest/hamcrest-php",
         "laravel/pint",
         "laravel/sail",
+        "lucascudo/laravel-pt-br-localization",
         "mockery/mockery",
         "myclabs/deep-copy",
         "nunomaduro/collision",

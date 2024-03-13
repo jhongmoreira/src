@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 use App\Models\Order;
@@ -33,7 +34,15 @@ class Orders extends Controller
         return view("ordem.create",['clientes'=>$clientes]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request):RedirectResponse{
+
+        $validated = $request->validate([
+            'cliente_id' => 'required',
+            'data_cadastro' => 'required',
+            'finalizado' => 'required',
+            'descricao' => 'required',
+        ]);
+
         $ordem = new Order;
         $ordem->cliente_id = $request->cliente_id;
         $ordem->data_cadastro = $request->data_cadastro;
@@ -44,7 +53,8 @@ class Orders extends Controller
         $ordem->save();
 
         toastr()->success('Ordem criada!');
-        return back();
+
+        return to_route('nova-ordem');
     }
 
     public function edit($id){

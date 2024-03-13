@@ -129,6 +129,7 @@ class ComposerStaticInit5be08f34e829768fb175747e68cbaabc
         ),
         'L' => 
         array (
+            'Lucascudo\\LaravelPtBRLocalization\\' => 34,
             'Livewire\\' => 9,
             'League\\MimeTypeDetection\\' => 25,
             'League\\Flysystem\\Local\\' => 23,
@@ -422,6 +423,10 @@ class ComposerStaticInit5be08f34e829768fb175747e68cbaabc
         array (
             0 => __DIR__ . '/..' . '/mockery/mockery/library/Mockery',
         ),
+        'Lucascudo\\LaravelPtBRLocalization\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lucascudo/laravel-pt-br-localization/src',
+        ),
         'Livewire\\' => 
         array (
             0 => __DIR__ . '/..' . '/livewire/livewire/src',
@@ -602,6 +607,7 @@ class ComposerStaticInit5be08f34e829768fb175747e68cbaabc
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Controllers/Dashboard.php',
         'App\\Http\\Controllers\\Orders' => __DIR__ . '/../..' . '/app/Http/Controllers/Orders.php',
+        'App\\Http\\Controllers\\Perfils' => __DIR__ . '/../..' . '/app/Http/Controllers/Perfils.php',
         'App\\Http\\Controllers\\Servicos' => __DIR__ . '/../..' . '/app/Http/Controllers/Servicos.php',
         'App\\Http\\Controllers\\Vendas' => __DIR__ . '/../..' . '/app/Http/Controllers/Vendas.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -615,7 +621,9 @@ class ComposerStaticInit5be08f34e829768fb175747e68cbaabc
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Cliente' => __DIR__ . '/../..' . '/app/Models/Cliente.php',
+        'App\\Models\\Empresa' => __DIR__ . '/../..' . '/app/Models/Empresa.php',
         'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
+        'App\\Models\\Perfil' => __DIR__ . '/../..' . '/app/Models/Perfil.php',
         'App\\Models\\Servico' => __DIR__ . '/../..' . '/app/Models/Servico.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Venda' => __DIR__ . '/../..' . '/app/Models/Venda.php',
@@ -3878,6 +3886,7 @@ class ComposerStaticInit5be08f34e829768fb175747e68cbaabc
         'Livewire\\WithPagination' => __DIR__ . '/..' . '/livewire/livewire/src/WithPagination.php',
         'Livewire\\WithoutUrlPagination' => __DIR__ . '/..' . '/livewire/livewire/src/WithoutUrlPagination.php',
         'Livewire\\Wrapped' => __DIR__ . '/..' . '/livewire/livewire/src/Wrapped.php',
+        'Lucascudo\\LaravelPtBRLocalization\\LaravelPtBRLocalizationServiceProvider' => __DIR__ . '/..' . '/lucascudo/laravel-pt-br-localization/src/LaravelPtBRLocalizationServiceProvider.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
