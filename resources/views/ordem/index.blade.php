@@ -42,7 +42,7 @@
                             @foreach($orders as $order)
                             <tr>
                                 <td>{{ $order->id }}</td>
-                                <td> <a href="{{ route('cliente', $order->id) }}"> {{ $order->cliente->nome }} </a></td>
+                                <td> <a href="{{ route('cliente', $order->cliente->id) }}"> {{ $order->cliente->nome }} </a></td>
                                 <td>{{  date('d/m/Y', strtotime($order->data_cadastro)) }}</td>
                                 <td>
                                     @if ($order->finalizado == 0)
