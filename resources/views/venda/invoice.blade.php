@@ -11,6 +11,19 @@
 
 <div id="relatorio">
 
+<div class="row mb-2 text-center p-2">
+    <div class="col-md-12">
+        <img src="{{ asset('img/logo_exata_dark.png') }}" width="100" alt="">
+        <div>
+            <b>{{ $empresa->nome_empresa}}</b> <br>
+            {{ "ID"." ".$empresa->identificacao}}<br>
+            {{ $empresa->telefone}}
+        </div>
+    </div>
+</div>
+
+<hr>
+
 <div class="row">
     <div class="col-md-12"><h3>{{ $venda->cliente->nome}}</h3></div>
 </div>
@@ -49,15 +62,6 @@
         </div>
     </div>
 
-</div>
-
-<div class="row mt-3">
-    <div class="col-md-12">
-        <div class="form-group">
-            <label for="obs"><b>Observação</b></label>
-            <p>{{$venda->cliente->obs}}</p>
-        </div>
-    </div>
 </div>
 
 <hr>
