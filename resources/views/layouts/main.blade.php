@@ -75,6 +75,22 @@
                 </a>
             </li>
 
+            <!-- Nav Item - Lista Tarefas-->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('nova-ordem') }}">
+                    <i class="fas fa-plus-square"></i>
+                    <span>Nova Tarefa</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Lista Tarefas-->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('pastas') }}">
+                    <i class="fa fa-folder"></i>
+                    <span>Pastas</span>
+                </a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
