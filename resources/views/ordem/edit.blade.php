@@ -32,11 +32,17 @@
           <label for="finalizado">Status</label>
             <select name="finalizado" id="finalizado" class="form-control" required>
                 @if($order->finalizado == 0)
-                    <option value="0" selected>Em Andamento</option>
-                    <option value="1">Finalizado</option>
+                    <option value="0" selected>Não Iniciado</option>
+                    <option value="1">Em Andamento</option>
+                    <option value="2">Concluído</option>
+                @elseif($order->finalizado == 1)
+                    <option value="0">Não Iniciado</option>
+                    <option value="1" selected>Em Andamento</option>
+                    <option value="2">Concluído</option>
                 @else
-                    <option value="0">Em Andamento</option>
-                    <option value="1" selected>Finalizado</option>
+                    <option value="0">Não Iniciado</option>
+                    <option value="1">Em Andamento</option>
+                    <option value="2" selected>Concluído</option>
                 @endif
             </select>
         </div>

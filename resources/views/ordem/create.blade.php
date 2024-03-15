@@ -48,9 +48,9 @@
         <div class="form-group">
           <label for="finalizado">Status</label>
             <select name="finalizado" id="finalizado" class="form-control" required>
-                <option value=""></option>
-                <option value="0">Em Andamento</option>
-                <option value="1">Finalizado</option>
+                <option value="0">Não iniciado</option>
+                <option value="1">Em Andamento</option>
+                <option value="3">Finalizado</option>
             </select>
         </div>
     </div>

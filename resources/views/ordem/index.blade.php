@@ -46,9 +46,11 @@
                                 <td>{{  date('d/m/Y', strtotime($order->data_cadastro)) }}</td>
                                 <td>
                                     @if ($order->finalizado == 0)
-                                        <span class="badge badge-danger">Em andamento</span>
+                                        <span class="badge badge-danger">Não Iniciado</span>
+                                    @elseif ($order->finalizado == 1)
+                                        <span class="badge badge-warning">Em Andamento</span>
                                     @else
-                                        <span class="badge badge-success">Concluído</span>
+                                        <span class="badge badge-success">Concluído</span>                                    
                                     @endif
                                 </td>
                                 <td>
