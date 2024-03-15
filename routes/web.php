@@ -9,6 +9,7 @@ use App\Http\Controllers\Vendas;
 use App\Http\Controllers\Orders;
 use App\Http\Controllers\Perfils;
 use App\Http\Controllers\Pastas;
+use App\Http\Controllers\Publicos;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,7 @@ Route::get('/editar/ordem/{id}', [Orders::class, 'edit'])->name('editar-ordem')-
 Route::post('/update/ordem/{id}', [Orders::class, 'update'])->name('update-ordem')->middleware('auth');
 
 Route::get('/pastas', [Pastas::class, 'index'])->name('pastas')->middleware('auth');
+Route::get('/publico', [Publicos::class, 'index'])->name('publico');
 
 
 
