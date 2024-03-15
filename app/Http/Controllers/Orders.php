@@ -17,13 +17,13 @@ class Orders extends Controller
     }
 
     public function indexAbertas(){
-        $orders = Order::with('cliente')->where('finalizado', 0)->get();
+        $orders = Order::with('cliente')->where('finalizado', 0)->orWhere('finalizado', 1)->get();
 
         return view('ordem.index', ['orders'=>$orders]);
     }
 
     public function indexFechadas(){
-        $orders = Order::with('cliente')->where('finalizado', 1)->get();
+        $orders = Order::with('cliente')->where('finalizado', 2)->get();
 
         return view('ordem.index', ['orders'=>$orders]);
     }
