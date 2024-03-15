@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Exata TI - Dashboard')
+@section('title', 'Exata T.I. - Dashboard')
 @section('content')
 
 <!-- Page Heading -->
