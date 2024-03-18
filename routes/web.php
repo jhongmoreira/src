@@ -10,6 +10,7 @@ use App\Http\Controllers\Orders;
 use App\Http\Controllers\Perfils;
 use App\Http\Controllers\Pastas;
 use App\Http\Controllers\Publicos;
+use App\Http\Controllers\Notes;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,9 @@ Route::post('/delete/venda/{id}', [Orders::class, 'destroy'])->name('apagar-orde
 
 Route::get('/pastas', [Pastas::class, 'index'])->name('pastas')->middleware('auth');
 Route::get('/publico', [Publicos::class, 'index'])->name('publico');
+
+Route::get('/notas', [Notes::class, 'index'])->name('notas');
+Route::get('/notas/salvar', [Notes::class, 'store'])->name('salvar-nota');
 
 
 

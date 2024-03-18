@@ -85,6 +85,14 @@
 
             <!-- Nav Item - Lista Tarefas-->
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('notas') }}">
+                    <i class="fa fa-sticky-note"></i>
+                    <span>Anotações</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Lista Tarefas-->
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('pastas') }}">
                     <i class="fa fa-folder"></i>
                     <span>Pastas</span>
