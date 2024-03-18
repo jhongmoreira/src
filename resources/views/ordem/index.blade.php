@@ -55,6 +55,30 @@
                                 </td>
                                 <td>
                                     <a href="{{ route('editar-ordem', $order->id) }}" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                    <button class="btn btn-sm btn-danger"><i class="fa fa-ban" data-toggle="modal" data-target="#exampleModal{{$order->id}}"></i></button>
+                                    <!-- Modal -->
+                                    <form action="{{ route('apagar-ordem', $order->id) }}" method="post">
+                                    @csrf
+                                        <div class="modal fade" id="exampleModal{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Venda {{$order->id}}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Deseja realmente apagar esta Tarefa?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                    <button type="submit" class="btn btn-danger">Sim, desejo apagar.</button>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
@@ -66,4 +90,5 @@
 
         </div>
     </div>
+
 @endsection

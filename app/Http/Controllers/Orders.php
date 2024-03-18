@@ -74,4 +74,15 @@ class Orders extends Controller
         toastr()->success('Status atualizado.');
         return redirect('/ordens');
     }
+
+    public function destroy($id){
+        $cliente = Order::findOrFail($id)->delete();
+
+        // return redirect('/')->with('msg', 'Cliente deletado com sucesso!');
+
+        //Implementação com toastr
+        toastr()->success('Registro deletado!');
+        return redirect('/ordens');
+        
+    }
 }
