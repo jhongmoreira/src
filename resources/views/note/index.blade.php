@@ -34,18 +34,16 @@
                    Todas as notas
                 </h6>
             </div>
-            
-            @foreach($notes as $note)
-                <div class="row p-3">
-                    <div class="col-md-12">
-                        <div>
-                            {{$note->anotacao}}
-                        </div>
-                        <span style="font-size: 5px;">{{ $note->data_cad}}</span>
-                        <hr>
+            <div class="row p-3">            
+                @foreach($notes as $note)
+                <div class="col-md-2 border border-secondary m-2" style="background-color: #FFFF88;">
+                    <small class="text-dark font-weight-light">{{ $note->data_cad}}</small>
+                    <div>
+                        {{$note->anotacao}}
                     </div>
                 </div>
-            @endforeach
+                @endforeach
+            </div>  
 
         </div>
 
