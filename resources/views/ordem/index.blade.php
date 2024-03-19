@@ -6,16 +6,41 @@
 
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">
-                @if(request()->is('ordens/abertas'))
-                    Tarefas em Aberto
-                @elseif(request()->is('ordens/fechadas'))
-                    Tarefas Concluídas
-                @else
-                    Todas as Tarefas
-                @endif
-                </h6>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h6 class="m-0 font-weight-bold text-primary">
+                        @if(request()->is('ordens/abertas'))
+                            Tarefas em Aberto
+                        @elseif(request()->is('ordens/fechadas'))
+                            Tarefas Concluídas
+                        @else
+                            Todas as Tarefas
+                        @endif
+                        </h6>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="dropdown text-right m-1">
+                            <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Opções
+                            </a>
+                        
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="{{ route('ordens-abertas') }}">Abertos</a>
+                                <a class="dropdown-item" href="{{ route('ordens-fechadas') }}">Concluídos</a>
+                                <a class="dropdown-item" href="{{ route('ordens') }}">Todos</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('nova-ordem') }}">Nova</a>
+                            </div>
+                        </div>                 
+                    </div>                                        
+                </div>
             </div>
+
+
+
+
 
             <div class="card-body">
                 <div class="table-responsive">
