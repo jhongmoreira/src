@@ -37,11 +37,15 @@
             <div class="row p-3">            
                 @foreach($notes as $note)
                 <div class="col-md-2 border border-secondary m-2" style="background-color: #FFFF88;">
-                    <small class="text-dark font-weight-light">{{ $note->data_cad}}</small>
-                    <div>
-                        {{$note->anotacao}}
+                    <form action="{{ route('deletar-nota', $note->id) }}" method="POST" class="p-1">
+                        @csrf
+                        <small class="text-dark font-weight-light">{{ $note->data_cad}}</small>
+                        <div>
+                            {{$note->anotacao}}
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-note"><i class="fa fa-ban"></i></button>
+                    </form>
                     </div>
-                </div>
                 @endforeach
             </div>  
 

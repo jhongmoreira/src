@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/estilo.css')}}" rel="stylesheet">
 
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/> -->
 

@@ -69,6 +69,7 @@ Route::get('/publico', [Publicos::class, 'index'])->name('publico');
 
 Route::get('/notas', [Notes::class, 'index'])->name('notas');
 Route::get('/notas/salvar', [Notes::class, 'store'])->name('salvar-nota');
+Route::post('/notas/apagar/{id}', [Notes::class, 'destroy'])->name('deletar-nota');
 
 
 

@@ -24,4 +24,11 @@ class Notes extends Controller
     toastr()->success('Nota Salva.');
     return back();
    }
+
+   public function destroy($id){
+      $note = Note::findOrFail($id)->delete();
+
+      toastr()->success('Nota Excluida.');
+      return back();
+   }
 }
