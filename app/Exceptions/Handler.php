@@ -27,14 +27,5 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
 
         });
-    }
-
-    public function render($request, Throwable $exception)
-    {
-        $errorMessage = $exception->getMessage(); // Obtém a mensagem da exceção
-    
-        return response()->view('error', ['errorMessage' => $errorMessage], 500);
-    }
-    
-    
+    }   
 }
