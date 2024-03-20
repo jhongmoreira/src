@@ -15,6 +15,22 @@ class Dashboard extends Controller
         $order = Order::where('finalizado', 0)->orWhere('finalizado', 1)->count();
         $orderOk = Order::where('finalizado', 2)->count();
 
-        return view('welcome',['caixa'=>$caixa, 'vencer'=>$vencer, 'order'=>$order, 'orderOk'=>$orderOk]);
+        $somaVendas = Venda::select([
+            \DB::raw('DAY(data_venda) as dia'),
+            \DB::raw('SUM(valor_final) as total')
+        ])->where("pago",1)->groupBy('dia')->orderBy('dia', 'asc')->get();;
+
+        $data[] = '';
+        $valor[] = '';
+
+        foreach($somaVendas as $soma){
+            $data[] = $soma->dia;
+            $valor[] = $soma->total;
+        }
+
+        $tempo = implode(",", $data);
+        $somaTotal = implode(",", $valor);
+
+        return view('welcome',['caixa'=>$caixa, 'vencer'=>$vencer, 'order'=>$order, 'orderOk'=>$orderOk, 'tempo'=>$tempo, 'somaTotal'=>$somaTotal]);
     }
 }
