@@ -18,7 +18,7 @@ class Dashboard extends Controller
         $somaVendas = Venda::select([
             \DB::raw('DAY(data_venda) as dia'),
             \DB::raw('SUM(valor_final) as total')
-        ])->where("pago",1)->groupBy('dia')->orderBy('dia', 'asc')->get();;
+        ])->groupBy('dia')->orderBy('dia', 'asc')->get();;
 
         $data[] = '';
         $valor[] = '';
