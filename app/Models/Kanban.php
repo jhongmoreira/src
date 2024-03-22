@@ -6,17 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-
-class Order extends Model
+class Kanban extends Model
 {
-    protected $dates = [
-        'data_cadastro',
-    ];
-    
     use HasFactory;
-    
-    public function cliente(): BelongsTo
+
+    public function usuario(): belongsTo
     {
-        return $this->belongsTo(Cliente::class, 'cliente_id');
+        return $this->belongsTo(User::class, 'id_usuario');
     }
 }
