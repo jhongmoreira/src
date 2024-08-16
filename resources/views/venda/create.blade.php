@@ -14,7 +14,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="cliente">Cliente</label>
-            <select name="cliente" id="cliente" class="form-control" required>
+            <select name="cliente" id="cliente" class="cliente form-control" required>
                 <option value=""></option>
                 @foreach($clientes as $cliente)
                     <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
@@ -101,4 +101,6 @@
     </div>
 </div>
 </form>
+
+
 @endsection
