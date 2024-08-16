@@ -29,7 +29,7 @@
             <select name="servico" id="servico" class="form-control" required>
                 <option value=""></option>
                 @foreach($servicos as $servico)
-                    <option value="{{ $servico->id }}">{{ $servico->servico }}</option>
+                    <option value="{{ $servico->id }}" preco="{{ $servico->valor }}">{{ $servico->servico }}</option>
                 @endforeach
             </select>
         </div>
@@ -41,6 +41,28 @@
           <input type="number" step="0.01" name="valor_final" id="valor_final" class="form-control">
         </div>
     </div>
+
+    <script>
+        // Obtém o elemento select e o input
+        const selectElement = document.getElementById('servico');
+        const inputElement = document.getElementById('valor_final');
+
+        // Função para atualizar o valor do input
+        function atualizarValorFinal() {
+            // Obtém a opção selecionada
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            // Obtém o valor do atributo preco da opção selecionada
+            const preco = selectedOption.getAttribute('preco');
+            // Atualiza o valor do input
+            inputElement.value = preco;
+        }
+
+        // Adiciona um ouvinte de eventos para o evento de alteração no select
+        selectElement.addEventListener('change', atualizarValorFinal);
+
+        // Inicializa o valor do input com a seleção atual
+        atualizarValorFinal();
+    </script>
 
 </div>    
 
