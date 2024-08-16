@@ -26,7 +26,7 @@
     <div class="col-md-4">
         <div class="form-group">
             <label for="servico">Serviço</label>
-            <select name="servico" id="servico" class="form-control" required>
+            <select name="servico" id="servico" class="form-control servico" required>
                 <option value=""></option>
                 @foreach($servicos as $servico)
                     <option value="{{ $servico->id }}" preco="{{ $servico->valor }}">{{ $servico->servico }}</option>
