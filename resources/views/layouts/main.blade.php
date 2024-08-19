@@ -88,7 +88,7 @@
 
             <!-- Nav Item - Lista Tarefas-->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('kanbans') }}">
+                <a class="nav-link" href="{{ route('kanban') }}">
                     <i class="fa fa-sticky-note"></i>
                     <span>Kanbans</span>
                 </a>

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kanban_name', function (Blueprint $table) {
+        Schema::create('kanban_names', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->text("name");
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kanban_name');
+        Schema::dropIfExists('kanban_names');
     }
 };

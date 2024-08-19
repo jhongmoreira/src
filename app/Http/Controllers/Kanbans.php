@@ -14,7 +14,22 @@ class Kanbans extends Controller
         return view("kanban.index", ['kanbans'=>$kanbans]);
     }
 
+
+
     public function store(Request $request){
+        $kanban = new Kanban;
+        
+        $kanban->mensagem = $request->descricao;
+        $kanban->status = $request->status;
+        $kanban->id_usuario = \Auth::id();
+
+        $kanban->save();
+
+        toastr()->success('Quadro cadastrado.');
+        return back();
+    }
+
+    public function save(Request $request){
         $kanban = new Kanban;
         
         $kanban->mensagem = $request->descricao;

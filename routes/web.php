@@ -12,6 +12,7 @@ use App\Http\Controllers\Pastas;
 use App\Http\Controllers\Publicos;
 use App\Http\Controllers\Notes;
 use App\Http\Controllers\Kanbans;
+use App\Http\Controllers\KanbanNames;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,8 +73,10 @@ Route::get('/notas', [Notes::class, 'index'])->name('notas');
 Route::get('/notas/salvar', [Notes::class, 'store'])->name('salvar-nota');
 Route::post('/notas/apagar/{id}', [Notes::class, 'destroy'])->name('deletar-nota');
 
-Route::get('/kanbans', [Kanbans::class, 'index'])->name('kanbans');
-Route::get('/kanbans/novo', [Kanbans::class, 'new'])->name('kanban-new');
+Route::get('/kanban', [KanbanNames::class, 'index'])->name('kanban');
+Route::post('/kanban/novo', [KanbanNames::class, 'store'])->name('kanban-store');
+Route::post('/kanban/novo/salvar', [Kanbans::class, 'save'])->name('kanban-new-salvar');
+
 Route::post('/kanbans/salvar', [Kanbans::class, 'store'])->name('kanban-salvar');
 Route::post('/kanbans/prosseguir/{id}', [Kanbans::class, 'prosseguir'])->name('kanban-prosseguir');
 Route::post('/kanbans/parar/{id}', [Kanbans::class, 'parar'])->name('kanban-parar');
