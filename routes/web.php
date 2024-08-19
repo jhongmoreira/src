@@ -73,6 +73,7 @@ Route::get('/notas/salvar', [Notes::class, 'store'])->name('salvar-nota');
 Route::post('/notas/apagar/{id}', [Notes::class, 'destroy'])->name('deletar-nota');
 
 Route::get('/kanbans', [Kanbans::class, 'index'])->name('kanbans');
+Route::get('/kanbans/novo', [Kanbans::class, 'new'])->name('kanban-new');
 Route::post('/kanbans/salvar', [Kanbans::class, 'store'])->name('kanban-salvar');
 Route::post('/kanbans/prosseguir/{id}', [Kanbans::class, 'prosseguir'])->name('kanban-prosseguir');
 Route::post('/kanbans/parar/{id}', [Kanbans::class, 'parar'])->name('kanban-parar');
