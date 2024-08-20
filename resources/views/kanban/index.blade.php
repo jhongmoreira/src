@@ -23,7 +23,7 @@
                     </div>
         
                     <div class="modal-body">
-                        <form action="{{ route('kanban-salvar') }}" method="post">
+                        <form action="{{ route('kanban-salvar', $kbn) }}" method="post">
                             @csrf
         
                             <div class="col-md-12">

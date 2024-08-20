@@ -77,7 +77,8 @@ Route::get('/kanban', [KanbanNames::class, 'index'])->name('kanban');
 Route::post('/kanban/novo', [KanbanNames::class, 'store'])->name('kanban-store');
 Route::post('/kanban/novo/salvar', [Kanbans::class, 'save'])->name('kanban-new-salvar');
 
-Route::post('/kanbans/salvar', [Kanbans::class, 'store'])->name('kanban-salvar');
+Route::get('/kanbans/{kbn}', [Kanbans::class, 'index'])->name('kanbans');
+Route::post('/kanbans/salvar/{kbn}', [Kanbans::class, 'store'])->name('kanban-salvar');
 Route::post('/kanbans/prosseguir/{id}', [Kanbans::class, 'prosseguir'])->name('kanban-prosseguir');
 Route::post('/kanbans/parar/{id}', [Kanbans::class, 'parar'])->name('kanban-parar');
 Route::post('/kanbans/concluir/{id}', [Kanbans::class, 'concluir'])->name('kanban-concluir');

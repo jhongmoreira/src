@@ -11,17 +11,18 @@ class Kanbans extends Controller
     public function index(){
         $kanbans = Kanban::with('usuario')->get();
         
-        return view("kanban.index", ['kanbans'=>$kanbans]);
+        return view("kanban.index", ['kanbans'=>$kanbans, 'kbn'=>$kbn]);
     }
 
 
 
-    public function store(Request $request){
+    public function store(Request $request, $kbn){
         $kanban = new Kanban;
         
         $kanban->mensagem = $request->descricao;
         $kanban->status = $request->status;
         $kanban->id_usuario = \Auth::id();
+        $kanban->kanban_id = $kbn;
 
         $kanban->save();
 

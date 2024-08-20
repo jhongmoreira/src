@@ -67,7 +67,7 @@
             <tbody>
                 @foreach($kanbans as $kanban)                          
                 <tr>
-                    <td><a href="{{ $kanban->name }}" target="_blank">{{ $kanban->name }} </a></td>
+                    <td><a href="{{ route('kanbans', $kanban->id) }}">{{ $kanban->name }} </a></td>
                 </tr>
                 @endforeach
             </tbody>
