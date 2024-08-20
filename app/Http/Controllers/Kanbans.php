@@ -8,21 +8,26 @@ use App\Models\User;
 
 class Kanbans extends Controller
 {
-    public function index(){
-        $kanbans = Kanban::with('usuario')->get();
+    public function index(Request $request, $kbn) {
+        // $kanbans = Kanban::with('usuario, $kbn' )->get();
+        $kanbans = Kanban::with('usuario') // Carrega o relacionamento 'usuario'
+             ->where('kanban_id', $kbn) // Aplica um filtro baseado em $kbn
+             ->get();
         
-        return view("kanban.index", ['kanbans'=>$kanbans, 'kbn'=>$kbn]);
+        return view("kanban.index", ['kanbans' => $kanbans, 'kbn' => $kbn]);
     }
+    
 
 
+    public function store(Request $request){
 
-    public function store(Request $request, $kbn){
         $kanban = new Kanban;
-        
+
         $kanban->mensagem = $request->descricao;
         $kanban->status = $request->status;
         $kanban->id_usuario = \Auth::id();
-        $kanban->kanban_id = $kbn;
+        $kanban->kanban_id = $request->kanban_id;
+
 
         $kanban->save();
 

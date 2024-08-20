@@ -23,7 +23,7 @@
                     </div>
         
                     <div class="modal-body">
-                        <form action="{{ route('kanban-salvar', $kbn) }}" method="post">
+                        <form action="{{ route('kanban-salvar') }}" method="post">
                             @csrf
         
                             <div class="col-md-12">
@@ -43,6 +43,8 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <input type="hidden" value="{{ $kbn }}" name="kanban_id">
         
                     </div>
                     <div class="modal-footer">
