@@ -56,7 +56,7 @@
             <select name="finalizado" id="finalizado" class="form-control" required>
                 <option value="0">Não iniciado</option>
                 <option value="1">Em Andamento</option>
-                <option value="3">Finalizado</option>
+                <option value="2">Finalizado</option>
             </select>
         </div>
     </div>
