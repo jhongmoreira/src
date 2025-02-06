@@ -25,9 +25,9 @@
 
 <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-5">
         <div class="form-group">
-            <label for="cliente_id">Cliente</label>
+            <label for="cliente_id">Contato</label>
             <select name="cliente_id" id="cliente_id" class="form-control" required>
                 @foreach($clientes as $cliente)
                     <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
@@ -43,7 +43,14 @@
         </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-2">
+        <div class="form-group">
+          <label for="hora_cadastro">Hora</label>
+          <input type="time" name="hora_cadastro" id="hora_cadastro" class="form-control">
+        </div>
+    </div>
+
+    <div class="col-md-2">
         <div class="form-group">
           <label for="finalizado">Status</label>
             <select name="finalizado" id="finalizado" class="form-control" required>

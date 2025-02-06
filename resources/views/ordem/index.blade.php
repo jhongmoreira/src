@@ -47,8 +47,8 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Cliente</th>
+                                <th>Cod.</th>
+                                <th>Nome</th>
                                 <th>Data</th>
                                 <th>Status</th>
                                 <th>Ação</th>
@@ -56,8 +56,8 @@
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>ID</th>
-                                <th>Cliente</th>
+                                <th>Cod.</th>
+                                <th>Nome</th>
                                 <th>Data</th>
                                 <th>Status</th>
                                 <th>Ação</th>

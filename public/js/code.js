@@ -3,7 +3,7 @@ return 'R$ ' + this.toFixed(2).replace('.', ',');
 }
 
 $(function () {
-    $('.cliente').select2({
+    $('#cliente_id').select2({
         theme: 'bootstrap4',
     });
  });

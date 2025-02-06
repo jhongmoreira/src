@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12"><h3>Novo Cliente</h3></div>
+    <div class="col-md-12"><h3>Novo Contato</h3></div>
 </div>
 
 <form action="{{ route('salvar-cliente') }}" method="post">
@@ -20,8 +20,8 @@
 
     <div class="col-md-4">
         <div class="form-group">
-          <label for="cpf">CPF</label>
-          <input type="number" name="cpf" id="cpf" class="form-control">
+          <label for="ra">Matrícula</label>
+          <input type="number" name="matricula" id="matricula" class="form-control">
         </div>
     </div>
 
@@ -42,15 +42,6 @@
           <input type="email" name="email" id="email" class="form-control">
         </div>
     </div>
-
-    <div class="col-md-4">
-        <div class="form-group">
-          <label for="pasta">Pasta do Drive</label>
-          <input type="url" name="pasta" id="pasta" class="form-control">
-          <small id="pastaNova" class="form-text text-right"><a href="https://drive.google.com/drive/folders/172sc5ZNVk3ohVFMiB2tN6fkMGphpfPBn" target="_blank">Criar</a></small>
-        </div>
-    </div>
-
 </div>   
 
 <div class="row">

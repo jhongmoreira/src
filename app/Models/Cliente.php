@@ -15,9 +15,9 @@ class Cliente extends Model
 
     protected $guarded = [];  
 
-    public function vendas(): HasMany
+    public function orders(): HasMany
     {
-        return $this->hasMany(Venda::class, 'cliente_id');
+        return $this->hasMany(Order::class, 'cliente_id');
     }
 
     public function servicos(): HasMany

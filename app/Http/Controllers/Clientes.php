@@ -22,14 +22,6 @@ class Clientes extends Controller
         return view('cliente.index',['clientes'=>$clientes]);
     }
 
-    // public function buscar(){
-    //     $search = request('buscar');
-
-    //     $clientes = Cliente::where('nome', 'like', '%' . $search . '%')->get();
-
-    //     return view('cliente.index',['clientes'=>$clientes]);
-    // }
-
     public function create(){
         return view('cliente.create',[]);
     }
@@ -37,16 +29,12 @@ class Clientes extends Controller
     public function store(Request $request){
         $cliente = new Cliente;
         $cliente->nome = $request->nome;
-        $cliente->cpf = $request->cpf;
+        $cliente->matricula = $request->matricula;
         $cliente->whatsapp = $request->whatsapp;
         $cliente->email = $request->email;
         $cliente->obs = $request->obs;
-        $cliente->pasta = $request->pasta;
-
 
         $cliente->save();
-
-        // return redirect('/')->with('msg','Registro salvo com sucesso.');
 
         //Implmenetação com toastr
         toastr()->success('Cliente cadastrado.');
@@ -57,7 +45,7 @@ class Clientes extends Controller
     public function show($id){
         
         // $cliente = Cliente::findOrFail($id);
-        $cliente = Cliente::with('servicos', 'vendas')->findOrFail($id);
+        $cliente = Cliente::with('orders')->findOrFail($id);
 
         return view('cliente.show', ['cliente'=>$cliente]);
     }

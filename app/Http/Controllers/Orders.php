@@ -39,13 +39,17 @@ class Orders extends Controller
         $validated = $request->validate([
             'cliente_id' => 'required',
             'data_cadastro' => 'required',
+            'hora_cadastro' => 'required',
             'finalizado' => 'required',
             'descricao' => 'required',
         ]);
 
+        // dd($request->hora_cadastro); 
+
         $ordem = new Order;
         $ordem->cliente_id = $request->cliente_id;
         $ordem->data_cadastro = $request->data_cadastro;
+        $ordem->hora_cadastro = $request->hora_cadastro; 
         $ordem->finalizado = $request->finalizado;
         $ordem->descricao = $request->descricao;
 
@@ -66,6 +70,7 @@ class Orders extends Controller
         $ordem = Order::findOrFail($request->id);
         $ordem->cliente_id = $request->cliente_id;
         $ordem->data_cadastro = $request->data_cadastro;
+        $ordem->hora_cadastro = $request->hora_cadastro; 
         $ordem->finalizado = $request->finalizado;
         $ordem->descricao = $request->descricao;
 

@@ -58,15 +58,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('cadastrar-cliente') }}">
                     <i class="fas fa-fw fa-user-plus"></i>
-                    <span>Cliente</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Nova Venda -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('nova-venda') }}">
-                    <i class="fas fa-fw fa-money-bill"></i>
-                    <span>Vender</span>
+                    <span>Contato</span>
                 </a>
             </li>
 
@@ -87,20 +79,20 @@
             </li>
 
             <!-- Nav Item - Lista Tarefas-->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('kanban') }}">
                     <i class="fa fa-sticky-note"></i>
                     <span>Kanbans</span>
                 </a>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Lista Tarefas-->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('pastas') }}">
                     <i class="fa fa-folder"></i>
                     <span>Pastas</span>
                 </a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -115,11 +107,11 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>Clientes</span>
+                    <span>Contatos</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Gerir clientes</h6>
+                        <h6 class="collapse-header">Gerir Contatos</h6>
                         <a class="collapse-item" href="{{ route('cadastrar-cliente') }}">Cadastrar</a>
                         <a class="collapse-item" href="{{ route('clientes') }}">Consultar</a>
                     </div>
@@ -127,7 +119,7 @@
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-money-bill"></i>
@@ -140,52 +132,12 @@
                         <a class="collapse-item" href="{{ route('vendas') }}">Consultar</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
            
 
 
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Outros
-            </div>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-tools"></i>
-                    <span>Serviços</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Serviços</h6>
-                        <a class="collapse-item" href="{{ route('novo-servico') }}">Novo</a>
-                        <a class="collapse-item" href="{{ route('servicos') }}">Listar</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
-                    aria-expanded="true" aria-controls="collapse3">
-                    <i class="fas fa-fw fa-list"></i>
-                    <span>Ordens</span>
-                </a>
-                <div id="collapse3" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Ordens</h6>
-                        <a class="collapse-item" href="{{ route('nova-ordem') }}">Novo</a>
-                        <a class="collapse-item" href="{{ route('ordens') }}">Listar</a>
-                    </div>
-                </div>
-            </li>
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -217,7 +169,7 @@
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         @csrf
                         <div class="input-group">
-                            <input name="buscar" type="text" class="form-control bg-light border-0 small" placeholder="Buscar Cliente..."
+                            <input name="buscar" type="text" class="form-control bg-light border-0 small" placeholder="Buscar Contato..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit">

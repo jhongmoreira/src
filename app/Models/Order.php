@@ -11,6 +11,7 @@ class Order extends Model
 {
     protected $dates = [
         'data_cadastro',
+        'hora_cadastro'
     ];
     
     use HasFactory;

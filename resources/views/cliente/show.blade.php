@@ -9,8 +9,8 @@
 
     <div class="col-md-4">
         <div class="form-group">
-          <label for="cpf"><b>CPF</b></label>
-          <p>{{$cliente->cpf}}</p>
+          <label for="cpf"><b>RA/Matrícula</b></label>
+          <p>{{$cliente->matricula}}</p>
         </div>
     </div>
 
@@ -32,14 +32,6 @@
 
 </div>
 
-<div class="row">
-    <div class="col-md-2">
-        <a href="{{ $cliente->pasta }}" target="_blank" class="btn btn-sm btn-primary" >
-            <i class="fa fa-folder"></i> Abrir Pasta
-        </a>
-    </div>
-</div>
-
 <hr>
 
 <div class="row">
@@ -59,7 +51,7 @@
         <div class="card shadow mb-4">
         <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    Vendas
+                    Atendimentos
                 </h6>
             </div>
 
@@ -68,39 +60,29 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Servico</th>
-                                <th>Valor</th>
-                                <th>Pago</th>
-                                <th>Vencimento</th>
+                                <th>ID</th>
+                                <th>Descricação</th>
+                                <th>Data</th>
                                 <th>Ação</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Servico</th>
-                                <th>Valor</th>
-                                <th>Pago</th>
-                                <th>Vencimento</th>
+                                <th>ID</th>
+                                <th>Descricação</th>
+                                <th>Data</th>
                                 <th>Ação</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach($cliente->vendas as $venda)
+                            @foreach($cliente->orders as $order)
                             <tr>
-                                <td>{{ $venda->servico->servico }}</td>
-                                <td>{{ 'R$ ' . number_format($venda->valor_final, 2, ',', '.'); }}</td>
+                                <td>{{ $order->id}}</td>
+                                <td>{{ $order->descricao}}</td>
+                                <td>{{  date('d/m/Y', strtotime($order->data_cadastro)) }}</td>
                                 <td>
-                                    @if($venda->pago == 0)
-                                    <p>Não</p>
-                                    @else
-                                    <p>Sim</p>
-                                    @endif                                    
-                                </td>
-                                <td>{{  date('d/m/Y', strtotime($venda->data_vencimento)) }}</td>
-                                <td>
-                                    <a href="{{ route('venda', $venda->id) }}" class="btn btn-sm btn-primary mt-1"><i class="fa fa-eye"></i></a>
-                                    <a href="{{ route('editar-venda', $venda->id) }}" class="btn btn-sm btn-warning mt-1"><i class="fa fa-edit"></i></a>
-                                    <a href="{{ route('apagar-venda', $venda->id) }}" class="btn btn-sm btn-danger mt-1"><i class="fa fa-ban"></i></a>
+                                    <a href="{{ route('editar-ordem', $order->id) }}" class="btn btn-sm btn-warning mt-1"><i class="fa fa-edit"></i></a>
+                                    <a href="{{ route('apagar-ordem', $order->id) }}" class="btn btn-sm btn-danger mt-1"><i class="fa fa-ban"></i></a>
                                 </td>
                             </tr>
                             @endforeach

@@ -16,7 +16,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nome</th>
-                                <th>CPF</th>
+                                <th>Matrícula</th>
                                 <th>Whatsapp</th>
                                 <th>Ação</th>
                             </tr>
@@ -25,7 +25,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nome</th>
-                                <th>CPF</th>
+                                <th>Matrícula</th>
                                 <th>Whatsapp</th>
                                 <th>Ação</th>
                             </tr>
@@ -35,7 +35,7 @@
                             <tr>
                                 <td>{{ $cliente->id }}</td>
                                 <td><a href="{{ route('cliente', $cliente->id) }}">{{ $cliente->nome }}</td>
-                                <td>{{ $cliente->cpf }}</td>
+                                <td>{{ $cliente->matricula }}</td>
                                 <td><a href="https://wa.me/+55{{$cliente->whatsapp}}" target="_blank">{{$cliente->whatsapp}}</a></td>
                                 <td>
                                     <a href="{{ $cliente->pasta }}" target="_blank" class="btn btn-sm btn-secondary mt-1"><i class="fa fa-folder"></i></a>
