@@ -84,7 +84,7 @@
                                 <td>{{ $atendimento->id }}</td>
                                 <td> {{ $atendimento->cliente->nome }} </td>
                                 <td>{{  date('d/m/Y', strtotime($atendimento->data_cadastro)) }}</td>
-                                <td>{{  date('H:m', strtotime($atendimento->hora_cadastro)) }}</td>
+                                <td>{{  date('H:i', strtotime($atendimento->hora_cadastro)) }}</td>
                                 <td>
                                     @if ($atendimento->finalizado == 0)
                                         <span class="badge badge-danger">Não Iniciado</span>
