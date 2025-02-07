@@ -13,6 +13,7 @@ use App\Http\Controllers\Publicos;
 use App\Http\Controllers\Notes;
 use App\Http\Controllers\Kanbans;
 use App\Http\Controllers\KanbanNames;
+use App\Http\Controllers\Relatorios;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,9 @@ Route::post('/kanbans/salvar', [Kanbans::class, 'store'])->name('kanban-salvar')
 Route::post('/kanbans/prosseguir/{id}', [Kanbans::class, 'prosseguir'])->name('kanban-prosseguir');
 Route::post('/kanbans/parar/{id}', [Kanbans::class, 'parar'])->name('kanban-parar');
 Route::post('/kanbans/concluir/{id}', [Kanbans::class, 'concluir'])->name('kanban-concluir');
+
+Route::get('/relatorio/atendimentos', [Relatorios::class, 'index'])->name('relatorio-atendimentos');
+
 
 
 

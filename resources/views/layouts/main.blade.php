@@ -127,20 +127,20 @@
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <!-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-money-bill"></i>
-                    <span>Vendas</span>
+                    <span>Relatórios</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Vendas</h6>
-                        <a class="collapse-item" href="{{ route('nova-venda')}}">Nova</a>
-                        <a class="collapse-item" href="{{ route('vendas') }}">Consultar</a>
+                        <h6 class="collapse-header">Atendimentos</h6>
+                        <a class="collapse-item" href="{{ route('relatorio-atendimentos')}}">Todos</a>
+                        <a class="collapse-item" href="{{ route('vendas') }}">Por mês</a>
                     </div>
                 </div>
-            </li> -->
+            </li>
            
 
 
