@@ -85,6 +85,7 @@ Route::post('/kanbans/parar/{id}', [Kanbans::class, 'parar'])->name('kanban-para
 Route::post('/kanbans/concluir/{id}', [Kanbans::class, 'concluir'])->name('kanban-concluir');
 
 Route::get('/relatorio/atendimentos', [Relatorios::class, 'index'])->name('relatorio-atendimentos');
+Route::get('/relatorio/atendimentos/periodo', [Relatorios::class, 'filter'])->name('relatorio-periodos');
 
 
 

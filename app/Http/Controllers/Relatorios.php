@@ -13,4 +13,16 @@ class Relatorios extends Controller
 
         return view('relatorio.index', ['atendimentos'=>$atendimentos]);
     }
+
+    public function filter(Request $request)
+    {
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+
+        $atendimentos = Order::whereBetween('data_cadastro', [$startDate, $endDate])->get();
+
+        return view('relatorio.index', ['atendimentos'=>$atendimentos]);
+    
+}
+
 }
