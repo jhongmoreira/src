@@ -10,11 +10,13 @@
                     <div class="col-md-9">
                         <h6 class="m-0 font-weight-bold text-primary">
                         @if(request()->is('ordens/abertas'))
-                            Tarefas em Aberto
+                            Atendimentos em Aberto
                         @elseif(request()->is('ordens/fechadas'))
-                            Tarefas Concluídas
+                            Atendimentos Concluídas
+                        @elseif(request()->is('ordens/abertas/hoje'))
+                            Atendimentos do Dia
                         @else
-                            Todas as Tarefas
+                            Atendimentos as Tarefas
                         @endif
                         </h6>
                     </div>

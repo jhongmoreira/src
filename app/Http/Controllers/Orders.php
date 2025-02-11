@@ -28,6 +28,13 @@ class Orders extends Controller
         return view('ordem.index', ['orders'=>$orders]);
     }
 
+    public function indexAbertasHoje(){
+        $orders = Order::whereDate('data_cadastro', now()->toDateString())->get();
+
+        return view('ordem.index', ['orders'=>$orders]);
+    }
+    
+
     public function create(){
         $clientes = Cliente::all();
 

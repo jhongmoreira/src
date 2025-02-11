@@ -61,6 +61,7 @@ Route::get('/fatura/{id}', [Vendas::class, 'invoice'])->name('fatura');
 Route::get('/ordens', [Orders::class, 'index'])->name('ordens')->middleware('auth');
 Route::get('/ordens/abertas', [Orders::class, 'indexAbertas'])->name('ordens-abertas')->middleware('auth');
 Route::get('/ordens/fechadas', [Orders::class, 'indexFechadas'])->name('ordens-fechadas')->middleware('auth');
+Route::get('/ordens/abertas/hoje', [Orders::class, 'indexAbertasHoje'])->name('ordens-abertas-hoje')->middleware('auth');
 Route::get('/nova/ordem', [Orders::class, 'create'])->name('nova-ordem')->middleware('auth');
 Route::post('/salvar/ordem', [Orders::class, 'store'])->name('salvar-ordem')->middleware('auth');
 Route::get('/editar/ordem/{id}', [Orders::class, 'edit'])->name('editar-ordem')->middleware('auth');
