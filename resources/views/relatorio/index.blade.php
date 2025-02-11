@@ -49,9 +49,13 @@
 
                                     <a href="#"  onclick="Convert_HTML_To_PDF();" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Baixar</a>
                         </div>
-
                     <!-- </div>  -->
                 </div>
+                                        <div class="row p-1">
+                        @if (isset($startDate))
+                            <div class="col-md-12"> {{ $totalAtendimentos }} atendimentos - Período: {{  date('d/m/Y', strtotime($startDate)) }} até {{  date('d/m/Y', strtotime($endDate)) }}</div>
+                        @endif
+                        </div>
                 
                 
             </div>
@@ -63,6 +67,7 @@
                         <thead>
                             <tr>
                                 <th>Cod.</th>
+                                <th>Matrícula</th>
                                 <th>Nome</th>
                                 <th>Data</th>
                                 <th>Hora</th>
@@ -72,6 +77,7 @@
                         <tfoot>
                             <tr>
                                 <th>Cod.</th>
+                                <th>Matrícula</th>
                                 <th>Nome</th>
                                 <th>Data</th>
                                 <th>Hora</th>
@@ -82,6 +88,13 @@
                             @foreach($atendimentos as $atendimento)
                             <tr>
                                 <td>{{ $atendimento->id }}</td>
+                                <td>
+                                    @if($atendimento->cliente->matricula == '')
+                                    <i>Externo</i>
+                                    @else
+                                    {{ $atendimento->cliente->matricula }}
+                                    @endif
+                                </td>
                                 <td> {{ $atendimento->cliente->nome }} </td>
                                 <td>{{  date('d/m/Y', strtotime($atendimento->data_cadastro)) }}</td>
                                 <td>{{  date('H:i', strtotime($atendimento->hora_cadastro)) }}</td>
@@ -93,6 +106,12 @@
                                     @else
                                         <span class="badge badge-success">Concluído</span>                                    
                                     @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class="small m-0 p-0">
+                                    <b class="mt-5">Assunto:</b> {{ $atendimento->descricao }}
+                                    <hr class="m-0 p-0">
                                 </td>
                             </tr>
                             @endforeach

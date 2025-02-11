@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
+<head><meta charset="utf-8">
 
-    <meta charset="utf-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -136,8 +136,7 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Atendimentos</h6>
-                        <a class="collapse-item" href="{{ route('relatorio-atendimentos')}}">Todos</a>
-                        <a class="collapse-item" href="{{ route('vendas') }}">Por mês</a>
+                        <a class="collapse-item" href="{{ route('relatorio-atendimentos')}}">Hoje</a>
                     </div>
                 </div>
             </li>

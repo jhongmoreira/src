@@ -30,7 +30,13 @@
             <label for="cliente_id">Contato</label>
             <select name="cliente_id" id="cliente_id" class="form-control" required>
                 @foreach($clientes as $cliente)
-                    <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
+                    <option value="{{ $cliente->id }}">
+                        @if($cliente->matricula =='')
+                          Externo - {{ $cliente->nome }}
+                        @else
+                          {{ $cliente->matricula }} - {{ $cliente->nome }}
+                        @endif
+                        </option>
                 @endforeach
             </select>
         </div>

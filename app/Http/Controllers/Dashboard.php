@@ -14,6 +14,9 @@ class Dashboard extends Controller
         $vencer = Venda::where('pago', 0)->sum('valor_final');
         $order = Order::where('finalizado', 0)->orWhere('finalizado', 1)->count();
         $orderOk = Order::where('finalizado', 2)->count();
+        
+        $dataAtual = date('Y-m-d'); // Obtém a data atual no formato 'YYYY-MM-DD'
+        $orderToday = Order::whereDate('data_cadastro', $dataAtual)->count();
 
         $somaVendas = Venda::select([
             \DB::raw('DAY(data_venda) as dia'),
@@ -31,6 +34,6 @@ class Dashboard extends Controller
         $tempo = implode(",", $data);
         $somaTotal = implode(",", $valor);
 
-        return view('welcome',['caixa'=>$caixa, 'vencer'=>$vencer, 'order'=>$order, 'orderOk'=>$orderOk, 'tempo'=>$tempo, 'somaTotal'=>$somaTotal]);
+        return view('welcome',['caixa'=>$caixa, 'vencer'=>$vencer, 'order'=>$order, 'orderOk'=>$orderOk, 'orderToday'=>$orderToday, 'tempo'=>$tempo, 'somaTotal'=>$somaTotal]);
     }
 }
