@@ -50,6 +50,7 @@
                         <thead>
                             <tr>
                                 <th>Cod.</th>
+                                <th>Matrícula</th>
                                 <th>Nome</th>
                                 <th>Data</th>
                                 <th>Status</th>
@@ -59,6 +60,7 @@
                         <tfoot>
                             <tr>
                                 <th>Cod.</th>
+                                <th>Matrícula</th>
                                 <th>Nome</th>
                                 <th>Data</th>
                                 <th>Status</th>
@@ -69,6 +71,13 @@
                             @foreach($orders as $order)
                             <tr>
                                 <td>{{ $order->id }}</td>
+                                <td>
+                                    @if($order->cliente->matricula == '')
+                                        <i>Externo</i>
+                                    @else
+                                        {{ $order->cliente->matricula }}
+                                    @endif
+                                </td>
                                 <td> <a href="{{ route('cliente', $order->cliente->id) }}"> {{ $order->cliente->nome }} </a></td>
                                 <td>{{  date('d/m/Y', strtotime($order->data_cadastro)) }}</td>
                                 <td>
