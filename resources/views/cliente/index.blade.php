@@ -38,7 +38,6 @@
                                 <td>{{ $cliente->matricula }}</td>
                                 <td><a href="https://wa.me/+55{{$cliente->whatsapp}}" target="_blank">{{$cliente->whatsapp}}</a></td>
                                 <td>
-                                    <a href="{{ $cliente->pasta }}" target="_blank" class="btn btn-sm btn-secondary mt-1"><i class="fa fa-folder"></i></a>
                                     <a href="{{ route('editar-cliente', $cliente->id) }}" class="btn btn-sm btn-warning mt-1"><i class="fa fa-edit"></i></a>
                                     <a href="{{ route('apagar-cliente', $cliente->id) }}" class="btn btn-sm btn-danger mt-1"><i class="fa fa-ban"></i></a>
                                 </td>

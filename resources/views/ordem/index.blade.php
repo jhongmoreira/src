@@ -70,7 +70,7 @@
                         <tbody>
                             @foreach($orders as $order)
                             <tr>
-                                <td>{{ $order->id }}</td>
+                                <td> <span title="{{ $order->descricao }}"> {{ $order->id }} </span></td>
                                 <td>
                                     @if($order->cliente->matricula == '')
                                         <i>Externo</i>
