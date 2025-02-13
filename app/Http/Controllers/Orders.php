@@ -65,7 +65,7 @@ class Orders extends Controller
 
         toastr()->success('Ordem criada!');
 
-        return to_route('nova-ordem');
+        return to_route('home');
     }
 
     public function edit($id){

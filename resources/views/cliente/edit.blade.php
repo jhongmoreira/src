@@ -20,8 +20,8 @@
 
     <div class="col-md-4">
         <div class="form-group">
-          <label for="cpf">CPF</label>
-          <input type="number" name="cpf" id="cpf" class="form-control" value="{{ $cliente->cpf }}">
+          <label for="matricula">Matrícula</label>
+          <input type="number" name="matricula" id="matricula" class="form-control" value="{{ $cliente->matricula }}">
         </div>
     </div>
 
@@ -42,14 +42,6 @@
           <input type="email" name="email" id="email" class="form-control" value="{{ $cliente->email }}">
         </div>
     </div>
-
-    <div class="col-md-4">
-        <div class="form-group">
-          <label for="pasta">Pasta do Drive</label>
-          <input type="url" name="pasta" id="pasta" class="form-control" value="{{ $cliente->pasta }}">
-        </div>
-    </div>
-
 </div>   
 
 <div class="row">
